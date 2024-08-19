@@ -1,6 +1,8 @@
 
 import './App.css'
+
 import Signup from './components/auth/Signup'
+
 
 function App() {
   
@@ -8,7 +10,10 @@ function App() {
   return (
     <>
       <div>
+
         <Signup />
+
+
       </div>
     </>
   )
