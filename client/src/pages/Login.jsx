@@ -1,11 +1,19 @@
-import LoginForm from "../components/auth/LoginForm";
+import React from "react";
+import AuthInput from "../components/auth/AuthInput";
+import FormHeading from "../components/auth/FormHeading";
+import FormSubmit from "../components/auth/FormSubmit";
 
-function Login(){
-  return (
-    <div className="flex items-center justify-center h-screen bg-pink-500 pt-60 lg:pt-10">
-      <LoginForm/>
-    </div>
-  );
-};
+function Login() {
+    return (
+        <div className="flex w-full justify-center items-center min-h-screen bg-gray-800 p-8 rounded-lg bg-pink-500">
+            <form className="w-[35%] rounded-lg shadow-lg p-4 bg-gray-800 flex flex-col items-center">
+                <FormHeading heading={"Login"} />
+                <AuthInput labelText={"Enter your username"} placeholderText={"Your Username"} inputType={"text"} inputFor={"username"} />
+                <AuthInput labelText={"Enter your password"} placeholderText={"********"} inputType={"password"} inputFor={"password"} />
+                <FormSubmit />
+            </form>
+        </div>
+    );
+}
 
-export default Login;
+export default React.memo(Login);
