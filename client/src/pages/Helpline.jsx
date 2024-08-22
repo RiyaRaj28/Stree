@@ -109,7 +109,7 @@ function Helpline() {
             </div>
             <p className="text-gray-600">Emergency shelters provide temporary accommodation and support services for women facing domestic violence or needing a safe place to stay.</p>
             <ul className="mt-4 space-y-2 text-lg">
-              <li><FaPhoneAlt className="text-pink-600 mr-2 inline-block" /><strong>National Women's Helpline:</strong> <a href="tel:1091" className="text-pink-500">1091</a></li>
+              <li><FaPhoneAlt className="text-pink-600 mr-2 inline-block" /><strong>National Women&apos;s Helpline:</strong> <a href="tel:1091" className="text-pink-500">1091</a></li>
               <li><FaGlobe className="text-pink-600 mr-2 inline-block" /><strong>WCD Website:</strong> <a href="https://wcd.nic.in" className="text-pink-500" target="_blank" rel="noopener noreferrer">wcd.nic.in</a></li>
             </ul>
           </div>
