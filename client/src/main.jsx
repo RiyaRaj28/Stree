@@ -1,6 +1,6 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
-import App from './App.jsx'
+import AppWrapper from './App.jsx'
 import './index.css'
 
 
@@ -10,7 +10,7 @@ import { RecoilRoot } from 'recoil';
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <RecoilRoot>
-      <App />
+      <AppWrapper />
     </RecoilRoot>
   </React.StrictMode>
 )
