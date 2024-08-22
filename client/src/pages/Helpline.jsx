@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FaPhoneAlt, FaEnvelope, FaGavel, FaHome, FaHeartbeat, FaChevronDown, FaChevronUp, FaGlobe } from "react-icons/fa";
+import { FaPhoneAlt, FaEnvelope, FaGavel, FaHome, FaHeartbeat, FaChevronDown, FaChevronUp, FaGlobe, FaHandHoldingHeart, FaFlag } from "react-icons/fa";
 
 function Helpline() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -49,7 +49,7 @@ function Helpline() {
                   <li><FaPhoneAlt className="text-gray-600 mr-2 inline-block" /> <strong>Police:</strong> <a href="tel:100" className="text-pink-500">100</a></li>
                   <li><FaPhoneAlt className="text-gray-600 mr-2 inline-block" /> <strong>Delhi Women Helpline:</strong> <a href="tel:181" className="text-pink-500">181</a></li>
                   <li><FaPhoneAlt className="text-gray-600 mr-2 inline-block" /> <strong>Domestic Abuse Helpline:</strong> <a href="tel:181" className="text-pink-500">181</a></li>
-                </ul>
+                  </ul>
                 <p className="mt-4 text-sm text-gray-400">Other helplines:</p>
                 <ul className="mt-2 space-y-1 text-sm text-gray-400">
                   <li><a href="tel:1098" className="text-pink-500 hover:underline">Child Helpline: 1098</a></li>
@@ -107,10 +107,10 @@ function Helpline() {
               <FaHome className="text-pink-600 text-3xl mr-3" aria-label="Home icon" />
               <h2 className="text-2xl font-semibold text-pink-900">Shelter Services</h2>
             </div>
-            <p className="text-gray-600">Emergency shelters provide temporary accommodation and support services for women facing domestic violence or needing a safe place to stay.</p>
+            <p className="text-gray-600">Various NGOs and government agencies offer shelter and support services for women in distress. Reach out for immediate assistance and safe shelter.</p>
             <ul className="mt-4 space-y-2 text-lg">
-              <li><FaPhoneAlt className="text-pink-600 mr-2 inline-block" /><strong>National Women&apos;s Helpline:</strong> <a href="tel:1091" className="text-pink-500">1091</a></li>
-              <li><FaGlobe className="text-pink-600 mr-2 inline-block" /><strong>WCD Website:</strong> <a href="https://wcd.nic.in" className="text-pink-500" target="_blank" rel="noopener noreferrer">wcd.nic.in</a></li>
+              <li><FaPhoneAlt className="text-pink-600 mr-2 inline-block" /><strong>Shelter Services Hotline:</strong> <a href="tel:1091" className="text-pink-500">1091</a></li>
+              <li><FaGlobe className="text-pink-600 mr-2 inline-block" /><strong>Find Local Shelters:</strong> <a href="https://www.wcd.nic.in/shelters" className="text-pink-500" target="_blank" rel="noopener noreferrer">wcd.nic.in/shelters</a></li>
             </ul>
           </div>
 
@@ -120,12 +120,38 @@ function Helpline() {
               <FaHeartbeat className="text-pink-600 text-3xl mr-3" aria-label="Heartbeat icon" />
               <h2 className="text-2xl font-semibold text-pink-900">Health Services</h2>
             </div>
-            <p className="text-gray-600">Health services for women include counseling, emergency medical care, and support for mental health and well-being.</p>
+            <p className="text-gray-600">Health services including mental health support and medical assistance are available for women in need. Reach out to these helplines for support.</p>
             <ul className="mt-4 space-y-2 text-lg">
-              <li><FaPhoneAlt className="text-pink-600 mr-2 inline-block" /><strong>National Helpline for Mental Health:</strong> <a href="tel:08046110007" className="text-pink-500">080-46110007</a></li>
-              <li><FaGlobe className="text-pink-600 mr-2 inline-block" /><strong>Health Ministry Website:</strong> <a href="https://www.mohfw.gov.in" className="text-pink-500" target="_blank" rel="noopener noreferrer">mohfw.gov.in</a></li>
+              <li><FaPhoneAlt className="text-pink-600 mr-2 inline-block" /><strong>National Health Helpline:</strong> <a href="tel:1800114666" className="text-pink-500">1800-11-4666</a></li>
+              <li><FaGlobe className="text-pink-600 mr-2 inline-block" /><strong>Ministry of Health and Family Welfare:</strong> <a href="https://www.mohfw.gov.in" className="text-pink-500" target="_blank" rel="noopener noreferrer">mohfw.gov.in</a></li>
             </ul>
           </div>
+
+           {/* Human Rights */}
+        <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl hover:bg-pink-50 transform transition duration-300 ease-in-out hover:scale-100 mx-auto mb-8">
+          <div className="flex items-center mb-4">
+            <FaFlag className="text-pink-600 text-3xl mr-3" aria-label="Flag icon" />
+            <h2 className="text-2xl font-semibold text-pink-900">Human Rights</h2>
+          </div>
+          <p className="text-gray-600">Human rights organizations provide assistance and advocate for women&apos;s rights and safety. They offer resources for reporting violations and seeking justice.<a href="https://nalsa.gov.in/" className="text-black underline hover:no-underline hover:text-pink-800" target="_blank" rel="noopener noreferrer"> Read more</a></p>
+          <ul className="mt-4 space-y-2 text-lg">
+            <li><FaPhoneAlt className="text-pink-600 mr-2 inline-block" /><strong>Human Rights Watch:</strong> <a href="tel:15100" className="text-pink-500">15100</a></li>
+            <li><FaGlobe className="text-pink-600 mr-2 inline-block" /><strong>Human Rights Watch Website:</strong> <a href="https://nalsa.gov.in/" className="text-pink-500" target="_blank" rel="noopener noreferrer">https://nalsa.gov.in/</a></li>
+          </ul>
+        </div>
+
+        {/* Tarshi Counseling */}
+        <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl hover:bg-pink-50 transform transition duration-300 ease-in-out hover:scale-100 mx-auto mb-8">
+          <div className="flex items-center mb-4">
+            <FaHandHoldingHeart className="text-pink-600 text-3xl mr-3" aria-label="Heart icon" />
+            <h2 className="text-2xl font-semibold text-pink-900">Tarshi Counseling Services</h2>
+          </div>
+          <p className="text-gray-600">Tarshi provides confidential counseling and support on issues related to sexual health and rights. They offer professional guidance and resources for women seeking help.<a href="http://www.tarshi.net" className="text-black underline hover:no-underline hover:text-pink-800" target="_blank" rel="noopener noreferrer"> Read more</a></p>
+          <ul className="mt-4 space-y-2 text-lg">
+            <li><FaPhoneAlt className="text-pink-600 mr-2 inline-block" /><strong>Tarshi Helpline:</strong> <a href="tel:0987654321" className="text-pink-500">098-765-4321</a></li>
+            <li><FaGlobe className="text-pink-600 mr-2 inline-block" /><strong>Tarshi Website:</strong> <a href="https://tarshi.net" className="text-pink-500" target="_blank" rel="noopener noreferrer">tarshi.net</a></li>
+          </ul>
+        </div>
         </div>
       </div>
     </>
