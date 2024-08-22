@@ -9,7 +9,7 @@ import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import NotFound from './pages/NotFound'; // Import the 404 page
+import NotFound from './pages/NotFound'; 
 import './index.css'; 
 
 function App() {
