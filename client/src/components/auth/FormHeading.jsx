@@ -3,7 +3,7 @@ import React from "react";
 function FormHeading({heading}){
     return (
         <>
-        <b className="mb-6"> {heading} </b>
+        <h1 className="mb-6b text-white text-xl m-4 font-bold font-serif"> {heading} </h1>
         </>
     )
 }
