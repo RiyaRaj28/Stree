@@ -1,0 +1,39 @@
+.map-container {
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    padding-top: 60px; /* Adjust according to header height */
+    padding-bottom: 30px; /* Adjust according to footer height */
+    position: relative;
+    z-index: 1;
+  }
+  
+  .map-title {
+    padding-top: 12px;
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 10px;
+    position: sticky;
+    top: 60px; /* Adjust this value based on your header height */
+    background-color: #ff69b4; /* Ensure the title has a background to cover content behind it */
+    z-index: 100;
+  }
+  
+  .map-content {
+    flex: 1;
+    border: 1px solid #ccc;
+  }
+  
+  .map-controls {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .incident-details {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+  }

@@ -39,6 +39,12 @@ function Header() {
               <Link to="/forum" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                 Forum
               </Link>
+              <Link to="/incident-form" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                Report Incident
+              </Link>
+              <Link to="/map" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                Map
+              </Link>
               <Link to="/about-us" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                 About us
               </Link>
@@ -82,6 +88,12 @@ function Header() {
             </Link>
             <Link to="/forum" className="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium">
               Forum
+            </Link>
+            <Link to="/incident-form" className="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium">
+              Report Incident
+            </Link>
+            <Link to="/map" className="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium">
+              Map
             </Link>
             <Link to="/about-us" className="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium">
               About us

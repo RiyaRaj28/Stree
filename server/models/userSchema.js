@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
-    
     email: {
         type: String,
         unique: true,
@@ -26,6 +25,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         required : true,
         trim: true
+    },
+    isAdmin: {
+        type: Boolean,
+        default: false
     }
 });
 
