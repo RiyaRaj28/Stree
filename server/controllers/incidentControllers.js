@@ -3,7 +3,12 @@ const Incident = require('../models/incidentSchema');
 const getAllIncidents = async (req, res) => {
   try {
     const incidents = await Incident.find();
-    res.json(incidents);
+
+    if(!incidents) {
+      return res.status(404).json({ msg: 'No incidents found.' });
+    }
+    res.status(200).json(incidents);
+    
   } catch (err) {
     console.error(err.message);0.
     res.status(500).send('Server Error');

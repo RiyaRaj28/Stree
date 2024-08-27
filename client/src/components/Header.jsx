@@ -2,9 +2,11 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { IoMenu } from "react-icons/io5";
 import { RxCrossCircled } from "react-icons/rx";
+import { useAuth } from '../store/auth';
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const { isLoggedIn, LogoutUser } = useAuth();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -24,12 +26,6 @@ function Header() {
               <Link to="/" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                 Home
               </Link>
-              <Link to="/register" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                Register
-              </Link>
-              <Link to="/login" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                Login
-              </Link>
               <Link to="/resources" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                 Resources
               </Link>
@@ -45,12 +41,27 @@ function Header() {
               <Link to="/map" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                 Map
               </Link>
-              <Link to="/about-us" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+            { isLoggedIn  ? 
+              ( <Link to="/logout" onClick = {LogoutUser} className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                Logout
+              </Link> )
+             :
+              ( <>
+              <Link to="/register" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                Register
+              </Link>
+              <Link to="/login" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                Login
+              </Link>
+              </> 
+              )
+            }
+              {/* <Link to="/about-us" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                 About us
-              </Link>
-              <Link to="/contact-us" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              </Link> */}
+              {/* <Link to="/contact-us" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                 Contact us
-              </Link>
+              </Link> */}
             </div>
             <div className="md:hidden">
               <button

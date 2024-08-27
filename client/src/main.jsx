@@ -5,12 +5,15 @@ import './index.css'
 
 
 import { RecoilRoot } from 'recoil';
+import { AuthProvider } from './store/auth.jsx';
 
 
 createRoot(document.getElementById('root')).render(
+  <AuthProvider>
   <React.StrictMode>
     <RecoilRoot>
       <AppWrapper />
     </RecoilRoot>
   </React.StrictMode>
+  </AuthProvider>
 )
