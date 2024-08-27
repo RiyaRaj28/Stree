@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../store/auth';
+import BottomWarning from './BottomWarning';
 const backendUrl = import.meta.env.VITE_BACKEND_URL
 
 function RegisterForm() {
@@ -103,6 +104,7 @@ function RegisterForm() {
         >
           Register
         </button>
+        <BottomWarning to={"/login"} label={"Already have an account?"} ButtonText={"Login"} />
       </form>
     </div>
 
