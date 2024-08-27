@@ -152,6 +152,19 @@ function Helpline() {
             <li><FaGlobe className="text-pink-600 mr-2 inline-block" /><strong>Tarshi Website:</strong> <a href="https://tarshi.net" className="text-pink-500" target="_blank" rel="noopener noreferrer">tarshi.net</a></li>
           </ul>
         </div>
+
+        {/* Tarshi Counseling */}
+        <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl hover:bg-pink-50 transform transition duration-300 ease-in-out hover:scale-100 mx-auto mb-8">
+          <div className="flex items-center mb-4">
+            <FaHandHoldingHeart className="text-pink-600 text-3xl mr-3" aria-label="Heart icon" />
+            <h2 className="text-2xl font-semibold text-pink-900">Tarshi Counseling Services</h2>
+          </div>
+          <p className="text-gray-600">Tarshi provides confidential counseling and support on issues related to sexual health and rights. They offer professional guidance and resources for women seeking help.<a href="http://www.tarshi.net" className="text-black underline hover:no-underline hover:text-pink-800" target="_blank" rel="noopener noreferrer"> Read more</a></p>
+          <ul className="mt-4 space-y-2 text-lg">
+            <li><FaPhoneAlt className="text-pink-600 mr-2 inline-block" /><strong>Tarshi Helpline:</strong> <a href="tel:0987654321" className="text-pink-500">098-765-4321</a></li>
+            <li><FaGlobe className="text-pink-600 mr-2 inline-block" /><strong>Tarshi Website:</strong> <a href="https://tarshi.net" className="text-pink-500" target="_blank" rel="noopener noreferrer">tarshi.net</a></li>
+          </ul>
+        </div>
         </div>
       </div>
     </>

@@ -10,6 +10,11 @@ import ContactUs from './pages/ContactUs';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import NotFound from './pages/NotFound'; 
+import IncidentForm from './pages/IncidentForm';
+import Map from './pages/Map';
+import RegisterForm from './pages/Register';
+import LoginForm from './pages/Login';
+import Logout from './pages/Logout';
 import './index.css'; 
 
 function App() {
@@ -27,13 +32,16 @@ function App() {
       
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<RegisterForm />} />
+        <Route path="/login" element={<LoginForm />} />
+        <Route path="/logout" element={<Logout />} />
         <Route path="/resources" element={<Resources />} />
         <Route path="/helpline" element={<Helpline />} />
         <Route path="/forum" element={<Forum />} />
         <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/contact-us" element={<ContactUs />} />
+        {/* <Route path="/contact-us" element={<ContactUs />} /> */}
+        <Route path="/incident-form" element={<IncidentForm />} />
+        <Route path="/map" element={<Map />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
 

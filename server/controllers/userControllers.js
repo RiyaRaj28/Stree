@@ -1,7 +1,4 @@
-const express = require('express');
-const router = express.Router();
 const User = require('../models/userSchema');
-
 
 const getHello = (req, res) => {
     res.send("Hello World from controller!");
@@ -19,5 +16,5 @@ const createUser = async (req, res) => {
 
 module.exports = {
     getHello,
-    createUser,
+    createUser
 };
