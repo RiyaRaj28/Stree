@@ -4,7 +4,6 @@ import { useAuth } from '../../store/auth';
 
 
 import BottomWarning from './BottomWarning';
-import axios from 'axios';
 
 const backendUrl = import.meta.env.VITE_BACKEND_URL
 
@@ -152,7 +151,9 @@ function LoginForm() {
         >
           Login
         </button>
-        <BottomWarning to={"/register"} label={"New to the platform?"} ButtonText={"Register"}/>
+
+        <BottomWarning to={"/register"} label={"New to the platform?"} ButtonText={"Register"} />
+
       </form>
     </div>
   );
