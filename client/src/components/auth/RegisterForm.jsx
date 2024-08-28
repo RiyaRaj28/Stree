@@ -104,7 +104,7 @@ function RegisterForm() {
         >
           Register
         </button>
-        <BottomWarning to={"/login"} label={"Already have an account?"} ButtonText={"Login"} />
+        <BottomWarning to={"/login"} label={"Already have an account?"} ButtonText={"Login"}/>
       </form>
     </div>
 
