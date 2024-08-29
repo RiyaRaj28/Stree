@@ -1,4 +1,5 @@
 const Incident = require('../models/incidentSchema');
+const User = require('../models/userSchema');
 
 const getAllIncidents = async (req, res) => {
   try {
@@ -7,17 +8,16 @@ const getAllIncidents = async (req, res) => {
     if(!incidents) {
       return res.status(404).json({ msg: 'No incidents found.' });
     }
-    res.status(200).json(incidents);
+    return res.status(200).json(incidents);
     
   } catch (err) {
     console.error(err.message);0.
-    res.status(500).send('Server Error');
+    return res.status(500).send('Server Error');
   }
 };
 
 const addNewIncident = async (req, res) => {
   const { location, description, category, date, time, name } = req.body;
-  console.log(req.body);
 
   try {
     if (typeof location.coordinates[0] !== 'number' || typeof location.coordinates[1] !== 'number') {
@@ -26,6 +26,14 @@ const addNewIncident = async (req, res) => {
 
     if (!location.type || location.type !== 'Point') {
       return res.status(400).json({ msg: 'Location type must be "Point".' });
+    }
+
+    const user = req.userId; 
+    console.log('Authenticated User ID:', user);
+
+    const userId = await User.findById(user);
+    if (!userId) {
+      return res.status(401).json({ msg: 'Invalid user ID' });
     }
 
     const newIncident = new Incident({
@@ -37,19 +45,21 @@ const addNewIncident = async (req, res) => {
       category,
       date,
       time,
+      user: userId, 
       name,
-      isAnonymous: !name, // isAnonymous is true if name is not provided
+      isAnonymous: !name, 
     });
 
     const incident = await newIncident.save();
-    console.log(incident);
+    console.log('New Incident:', incident);
 
-    res.json(incident);
+    return res.json(incident);
   } catch (err) {
     console.error(err.message);
-    res.status(500).send('Server Error');
+    return res.status(500).send('Server Error');
   }
 };
+
 
 module.exports = {
   getAllIncidents,

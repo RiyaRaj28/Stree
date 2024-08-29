@@ -1,34 +1,39 @@
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
-import Home from './pages/Home';
-import Register from './pages/Signup';
-import Login from './pages/Login';
-import Resources from './pages/Resources';
-import Helpline from './pages/Helpline';
-import Forum from './pages/Forum';
-import AboutUs from './pages/AboutUs';
-import ContactUs from './pages/ContactUs';
-import Header from './components/Header';
+import React, {Suspense} from 'react';
+const Home = React.lazy(() => import('./pages/Home'));
+const Resources = React.lazy(() => import('./pages/Resources'));
+const Login = React.lazy(() => import('./pages/Login'));
+const Forum = React.lazy(() => import('./pages/Forum'));
+const Header = React.lazy(() => import('./components/Header'));
+const Register = React.lazy(() => import('./pages/Signup'));
+const Helpline = React.lazy(() => import('./pages/Helpline'));
+const AboutUs = React.lazy(() => import('./pages/AboutUs'));
+const NotFound = React.lazy(() => import('./pages/NotFound'));
+const Logout = React.lazy(() => import('./pages/Logout'));
+const IncidentForm = React.lazy(() => import('./pages/IncidentForm'));
+const LoginForm = React.lazy(() => import('./pages/Login'));
+const Map = React.lazy(() => import('./pages/Map'));
+const ContactUs = React.lazy(() => import('./pages/ContactUs'));
+const RegisterForm = React.lazy(() => import('./pages/Register'));
+
+
 import Footer from './components/Footer';
-import NotFound from './pages/NotFound'; 
-import IncidentForm from './pages/IncidentForm';
-import Map from './pages/Map';
-import RegisterForm from './pages/Register';
-import LoginForm from './pages/Login';
-import Logout from './pages/Logout';
+
 import './index.css'; 
+import UserProfile from './pages/UserProfile';
 
 function App() {
   const location = useLocation();
 
-  // Define the routes where you don't want to display the header and footer
   const noHeaderFooterRoutes = ['/login', '/register'];
 
-  // Check if the current route matches any of the defined paths
   const shouldHideHeaderFooter = noHeaderFooterRoutes.includes(location.pathname);
+
 
   return (
     <div className="app-container">
-      {!shouldHideHeaderFooter && <Header />} {/* Conditionally render Header */}
+      <Suspense fallback={<div>Loading...</div>}>
+      {(!shouldHideHeaderFooter) ? <Header /> : null} {/* Conditionally render Header */}
       
       <Routes>
         <Route path="/" element={<Home />} />
@@ -39,13 +44,15 @@ function App() {
         <Route path="/helpline" element={<Helpline />} />
         <Route path="/forum" element={<Forum />} />
         <Route path="/about-us" element={<AboutUs />} />
-        {/* <Route path="/contact-us" element={<ContactUs />} /> */}
+        <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/incident-form" element={<IncidentForm />} />
         <Route path="/map" element={<Map />} />
+        <Route path="/user-profile" element={<UserProfile />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-
-      {!shouldHideHeaderFooter && <Footer />} {/* Conditionally render Footer */}
+      
+      {(!shouldHideHeaderFooter) ? <Footer /> : null} {/* Conditionally render Footer */}
+      </Suspense>
     </div>
   );
 }

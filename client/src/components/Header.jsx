@@ -41,6 +41,9 @@ function Header() {
               <Link to="/map" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                 Map
               </Link>
+              <Link to="/user-profile" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                User Profile
+              </Link>
             { isLoggedIn  ? 
               ( <Link to="/logout" onClick = {LogoutUser} className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                 Logout
@@ -59,9 +62,9 @@ function Header() {
               {/* <Link to="/about-us" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                 About us
               </Link> */}
-              {/* <Link to="/contact-us" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link to="/contact-us" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                 Contact us
-              </Link> */}
+              </Link> 
             </div>
             <div className="md:hidden">
               <button
@@ -99,6 +102,12 @@ function Header() {
             </Link>
             <Link to="/forum" className="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium">
               Forum
+            </Link>
+            <Link to="/incident-form" className="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium">
+              Report Incident
+            </Link>
+            <Link to="/map" className="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium">
+              Map
             </Link>
             <Link to="/incident-form" className="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium">
               Report Incident

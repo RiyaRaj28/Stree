@@ -4,8 +4,8 @@ import axios from 'axios';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import '../../src/map.css'
+import { useAuth } from "../store/auth";
 const backendUrl = import.meta.env.VITE_BACKEND_URL
-
 
 delete L.Icon.Default.prototype._getIconUrl;
 
@@ -19,12 +19,20 @@ const Map = () => {
   const [incidents, setIncidents] = useState([]);
   const [selectedIncident, setSelectedIncident] = useState(null);
   const [searchParams, setSearchParams] = useState({ dateRange: null, category: '' });
+
+  const { token } = useAuth(); 
+  const [mytoken,setMytoken] = useState(token);
   
   useEffect(() => {
     const fetchIncidents = async () => {
       try {
+        const config =  {
+            "headers": {
+              Authorization: `Bearer ${mytoken}`, 
+              "Content-Type": "application/json",
+        }};
         // const res = await axios.get('http://localhost:5000/api/incidents');
-        const res = await axios.get(`${backendUrl}/api/incidents/getAllIncidents`);
+        const res = await axios.get(`${backendUrl}/api/incidents/getAllIncidents`, config);
 
         setIncidents(res.data);
       } catch (error) {
