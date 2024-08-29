@@ -1,7 +1,6 @@
 const User = require('../models/userSchema');
 const bcrypt = require('bcryptjs')
 
-
 const login = async(req, res) => {
     try{
         const { userName, password } = req.body;
@@ -37,10 +36,16 @@ const register = async(req, res) => {
     try{
         const { email, password, userName } = req.body;
         const userExist = await User.findOne({ email })
+        const userNameExist = await User.findOne({ userName});
 
         if(userExist)
         {
             return res.status(400).json({error : "Email already exists"});
+        }
+
+        if(userNameExist)
+        {
+            return res.status(400).json({error : "User name already exists"});
         }
 
         const userCreated = await User.create({ 
@@ -65,18 +70,16 @@ const register = async(req, res) => {
     }
 }
 
-
 const getUser = async(req, res) => {
     try{
         const userData = req.user;
         console.log(userData);
-        return res.status(200).json({ message : userData})
+        return res.status(200).json({userData})
     } catch(err)
     {
         console.error(`error from user route ${err}`);
     }
 }
-
 
 module.exports = {
     login,
