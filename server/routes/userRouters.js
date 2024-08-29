@@ -11,3 +11,4 @@ userRouter.delete('/incidents/:id', authMiddleware, userController.deleteUserInc
 
 
 module.exports = userRouter;
+module.exports = userRouter;
