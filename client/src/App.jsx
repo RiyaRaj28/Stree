@@ -16,6 +16,7 @@ import RegisterForm from './pages/Register';
 import LoginForm from './pages/Login';
 import Logout from './pages/Logout';
 import './index.css'; 
+import UserProfile from './pages/UserProfile';
 
 function App() {
   const location = useLocation();
@@ -39,9 +40,10 @@ function App() {
         <Route path="/helpline" element={<Helpline />} />
         <Route path="/forum" element={<Forum />} />
         <Route path="/about-us" element={<AboutUs />} />
-        {/* <Route path="/contact-us" element={<ContactUs />} /> */}
+        <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/incident-form" element={<IncidentForm />} />
         <Route path="/map" element={<Map />} />
+        <Route path="/user-profile" element={<UserProfile />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
 

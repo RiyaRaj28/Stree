@@ -1,18 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { MapContainer, TileLayer, Marker, useMapEvents } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-const backendUrl = import.meta.env.VITE_BACKEND_URL
+import { useAuth } from "../store/auth";
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 const IncidentForm = () => {
-  const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('mistreatment');
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
   const [latitude, setLatitude] = useState(null);
   const [longitude, setLongitude] = useState(null);
-  const [isAnonymous, setIsAnonymous] = useState(false); // New state for anonymous submission
+  const { user } = useAuth(); // Get the logged-in user
+  console.log(user);
+
+  // const {currUser} = useContext(userContext);
+
+  const [name, setName] = useState('');
+
+  useEffect(() => {
+    if (user) {
+      setName(user.userName); // Autofill the name with the logged-in user's name
+    }
+  }, [user]);
 
   const detectLocation = () => {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -31,7 +42,6 @@ const IncidentForm = () => {
     setTime(now.toTimeString().split(' ')[0].slice(0, 5));
   };
 
-  // Custom hook to handle map clicks and set latitude and longitude
   const MapClickHandler = () => {
     useMapEvents({
       click: (e) => {
@@ -51,7 +61,7 @@ const IncidentForm = () => {
     }
 
     const newIncident = {
-      name: isAnonymous ? 'Anonymous' : name,
+      name,
       description,
       category,
       date,
@@ -61,16 +71,26 @@ const IncidentForm = () => {
         coordinates: [longitude, latitude], // Ensure coordinates are in [longitude, latitude] order
       },
     };
-    // axios.post('http://localhost:5000/api/incidents', newIncident)
-    axios.post(`${backendUrl}/api/incidents/addIncident`, newIncident)
+    
+    const token = user?.token; // Assuming the token is stored in the user object
 
-      .then(response => {
-        console.log('Incident saved:', response.data);
-      })
-      .catch(error => {
-        console.error('Error saving incident:', error);
-      });
-    setName('');
+    try {
+      const response = await axios.post(
+        `${backendUrl}/api/incidents/addIncident`,
+        newIncident,
+        { config: {
+          headers: {
+            Authorization: `Bearer ${token}`, // Pass the token in the Authorization header
+            "Content-Type": "application/json",
+          },
+        }}
+      );
+      console.log('Incident saved:', response.data);
+    } catch (error) {
+      console.error('Error saving incident:', error);
+    }
+
+    // Clear form fields
     setDescription('');
     setCategory('mistreatment');
     setDate('');
@@ -78,6 +98,7 @@ const IncidentForm = () => {
     setLatitude(null);
     setLongitude(null);
   };
+
   return (
     <div style={containerStyles}>
       <div style={formContainerStyles}>
@@ -87,24 +108,10 @@ const IncidentForm = () => {
             <label style={labelStyles}>Name</label>
             <input
               type="text"
-              value={isAnonymous ? '' : name} // Clear name field if anonymous
-              onChange={(e) => setName(e.target.value)}
-              disabled={isAnonymous} // Disable input if anonymous is selected
-              required={!isAnonymous} // Make field required only if not anonymous
+              value={name}
+              readOnly // Make the name field non-editable
               style={inputStyles}
             />
-          </div>
-
-          <div style={fieldContainer}>
-            <label style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
-              <input
-                type="checkbox"
-                checked={isAnonymous}
-                onChange={(e) => setIsAnonymous(e.target.checked)}
-                style={{ marginRight: '10px' }}
-              />
-              Submit Anonymously
-            </label>
           </div>
 
           <div style={fieldContainer}>
