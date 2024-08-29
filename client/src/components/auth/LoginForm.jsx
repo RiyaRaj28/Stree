@@ -79,45 +79,7 @@ function LoginForm() {
             }
         }
     };
-      //  const response = await axios.post(`${backendUrl}/api/auth/login`, loginData, {
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //   },
-      // });
-      // console.log("hi hello  testinggg", response.response.data);
-      // const response = await fetch(`${backendUrl}/api/auth/login`, {
-      //   method: 'POST',
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //   },
-      //   body: JSON.stringify(loginData),
-      // });
-
-      // if (response.ok)
-      //   { 
-      //     alert("Login successful");
-      //     const res_data = await response.json();
-      //     console.log("response from server : ", res_data); 
-
-      //     storeTokenInLS(res_data.token);
-  
-      //     setLoginData({
-      //       userName: '',
-      //       password: '',
-      //     });
-  
-      //     navigate("/");
-      //   } else {
-      //     alert("Login failed");
-      //     console.log("Login failed");
-      //   }
-
-    //   console.log('Response:', response);
-    // } catch (error) {
-    //   console.error('Error login:', error);
-    // }
-  //};
-
+      
   return (
     <div className="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md -z-0">
         <h2 className="text-4xl font-extrabold text-white mb-6 text-center">Login</h2>
@@ -154,7 +116,7 @@ function LoginForm() {
         </button>
 
 
-        <BottomWarning to={"/register"} label={"New to the platform?"} ButtonText={"Register"} />
+        <BottomWarning to={"/register"} label={"New to the platform?"} ButtonText={"Register here"} />
 
       </form>
     </div>
