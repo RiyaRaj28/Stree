@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 require('dotenv').config();
 const db = require('./db conn/connection'); 
+const authMiddleware = require('./middlewares/authMiddleware');
 
 const app = express();
 const port = 3000;
@@ -22,11 +23,14 @@ const incidentRouter = require('./routes/incidentRouters');
 const userRouter = require('./routes/userRouters');
 const authRouter = require('./routes/authRouters');
 const errorMiddleware = require('./middlewares/errorMiddleware');
+const contactRouters = require('./routes/contactRouters');
 
 //use Routers
+// app.use('/api', authMiddleware); 
 app.use('/api/incidents', incidentRouter);
 app.use('/api/users', userRouter);
 app.use('/api/auth', authRouter);
+app.use('/api/contact', contactRouters);
 
 app.get('/hello', (req, res) => {
     res.send('Hello, World!');

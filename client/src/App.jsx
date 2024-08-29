@@ -20,15 +20,14 @@ const RegisterForm = React.lazy(() => import('./pages/Register'));
 import Footer from './components/Footer';
 
 import './index.css'; 
+import UserProfile from './pages/UserProfile';
 
 function App() {
   const location = useLocation();
   
 
-  // Define the routes where you don't want to display the header and footer
   const noHeaderFooterRoutes = ['/login', '/register'];
 
-  // Check if the current route matches any of the defined paths
   const shouldHideHeaderFooter = noHeaderFooterRoutes.includes(location.pathname);
 
 
@@ -46,9 +45,10 @@ function App() {
         <Route path="/helpline" element={<Helpline />} />
         <Route path="/forum" element={<Forum />} />
         <Route path="/about-us" element={<AboutUs />} />
-        {/* <Route path="/contact-us" element={<ContactUs />} /> */}
+        <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/incident-form" element={<IncidentForm />} />
         <Route path="/map" element={<Map />} />
+        <Route path="/user-profile" element={<UserProfile />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       

@@ -1,18 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { MapContainer, TileLayer, Marker, useMapEvents } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-const backendUrl = import.meta.env.VITE_BACKEND_URL
+import { useAuth } from "../store/auth";
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 const IncidentForm = () => {
-  const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('mistreatment');
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
   const [latitude, setLatitude] = useState(null);
   const [longitude, setLongitude] = useState(null);
-  const [isAnonymous, setIsAnonymous] = useState(false); // New state for anonymous submission
+  const { user, token } = useAuth(); 
+  const [mytoken,setMytoken] = useState(token);
+
+  const [name, setName] = useState('');
+
+  useEffect(() => {
+    if (user) {
+      setName(user.userName); 
+    }
+  }, [user]);
 
   const detectLocation = () => {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -31,7 +40,6 @@ const IncidentForm = () => {
     setTime(now.toTimeString().split(' ')[0].slice(0, 5));
   };
 
-  // Custom hook to handle map clicks and set latitude and longitude
   const MapClickHandler = () => {
     useMapEvents({
       click: (e) => {
@@ -51,26 +59,31 @@ const IncidentForm = () => {
     }
 
     const newIncident = {
-      name: isAnonymous ? 'Anonymous' : name,
+      name,
       description,
       category,
       date,
       time,
       location: {
         type: 'Point',
-        coordinates: [longitude, latitude], // Ensure coordinates are in [longitude, latitude] order
+        coordinates: [longitude, latitude], 
       },
     };
-    // axios.post('http://localhost:5000/api/incidents', newIncident)
-    axios.post(`${backendUrl}/api/incidents/addIncident`, newIncident)
+    
+    const token = user?.token; 
 
-      .then(response => {
-        console.log('Incident saved:', response.data);
-      })
-      .catch(error => {
-        console.error('Error saving incident:', error);
-      });
-    setName('');
+    try {
+      const config =  {
+          "headers": {
+            Authorization: `Bearer ${mytoken}`, 
+            "Content-Type": "application/json",
+      }};
+      const response = await axios.post(`${backendUrl}/api/incidents/addIncident`,newIncident,config);
+      console.log('Incident saved:', response.data);
+    } catch (error) {
+      console.error('Error saving incident:', error);
+    }
+
     setDescription('');
     setCategory('mistreatment');
     setDate('');
@@ -78,6 +91,7 @@ const IncidentForm = () => {
     setLatitude(null);
     setLongitude(null);
   };
+
   return (
     <div style={containerStyles}>
       <div style={formContainerStyles}>
@@ -87,24 +101,10 @@ const IncidentForm = () => {
             <label style={labelStyles}>Name</label>
             <input
               type="text"
-              value={isAnonymous ? '' : name} // Clear name field if anonymous
-              onChange={(e) => setName(e.target.value)}
-              disabled={isAnonymous} // Disable input if anonymous is selected
-              required={!isAnonymous} // Make field required only if not anonymous
+              value={name}
+              readOnly 
               style={inputStyles}
             />
-          </div>
-
-          <div style={fieldContainer}>
-            <label style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
-              <input
-                type="checkbox"
-                checked={isAnonymous}
-                onChange={(e) => setIsAnonymous(e.target.checked)}
-                style={{ marginRight: '10px' }}
-              />
-              Submit Anonymously
-            </label>
           </div>
 
           <div style={fieldContainer}>
@@ -210,19 +210,18 @@ const IncidentForm = () => {
   );
 };
 
-// Styles
 const containerStyles = {
   display: 'flex',
   flexDirection: 'row',
   paddingTop: '60px',
-  height: '100vh', // Full height of the viewport
-  width: '100vw', // Full width of the viewport
+  height: '100vh', 
+  width: '100vw',
   position: 'relative',
   zIndex: '1',
 };
 
 const formContainerStyles = {
-  flex: 2, // Increased flex value to make the form wider
+  flex: 2, 
   padding: '20px',
   backgroundColor: '#1E1E1E',
   color: '#fff',
@@ -230,8 +229,7 @@ const formContainerStyles = {
 };
 
 const mapContainerStyles = {
-  flex: 5, // Decreased flex value to reduce the map width
-  // marginLeft: '10px', // Maintain some space between form and map
+  flex: 5, 
   borderRadius: '8px',
   overflow: 'hidden',
 };
@@ -268,7 +266,7 @@ const smallButtonStyles = {
   color: 'white',
   border: 'none',
   cursor: 'pointer',
-  marginLeft: '10px', // Add margin to ensure spacing between input and button
+  marginLeft: '10px', 
 };
 
 const inputStyles = {
@@ -276,7 +274,7 @@ const inputStyles = {
   fontSize: '14px',
   borderRadius: '4px',
   border: '1px solid #ccc',
-  flex: '1', // Allows input to take up the remaining space
+  flex: '1', 
 };
 
 const buttonStyles = {
