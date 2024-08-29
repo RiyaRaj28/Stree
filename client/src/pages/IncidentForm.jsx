@@ -12,16 +12,14 @@ const IncidentForm = () => {
   const [time, setTime] = useState('');
   const [latitude, setLatitude] = useState(null);
   const [longitude, setLongitude] = useState(null);
-  const { user } = useAuth(); // Get the logged-in user
-  console.log(user);
-
-  // const {currUser} = useContext(userContext);
+  const { user, token } = useAuth(); 
+  const [mytoken,setMytoken] = useState(token);
 
   const [name, setName] = useState('');
 
   useEffect(() => {
     if (user) {
-      setName(user.userName); // Autofill the name with the logged-in user's name
+      setName(user.userName); 
     }
   }, [user]);
 
@@ -68,29 +66,24 @@ const IncidentForm = () => {
       time,
       location: {
         type: 'Point',
-        coordinates: [longitude, latitude], // Ensure coordinates are in [longitude, latitude] order
+        coordinates: [longitude, latitude], 
       },
     };
     
-    const token = user?.token; // Assuming the token is stored in the user object
+    const token = user?.token; 
 
     try {
-      const response = await axios.post(
-        `${backendUrl}/api/incidents/addIncident`,
-        newIncident,
-        { config: {
-          headers: {
-            Authorization: `Bearer ${token}`, // Pass the token in the Authorization header
+      const config =  {
+          "headers": {
+            Authorization: `Bearer ${mytoken}`, 
             "Content-Type": "application/json",
-          },
-        }}
-      );
+      }};
+      const response = await axios.post(`${backendUrl}/api/incidents/addIncident`,newIncident,config);
       console.log('Incident saved:', response.data);
     } catch (error) {
       console.error('Error saving incident:', error);
     }
 
-    // Clear form fields
     setDescription('');
     setCategory('mistreatment');
     setDate('');
@@ -109,7 +102,7 @@ const IncidentForm = () => {
             <input
               type="text"
               value={name}
-              readOnly // Make the name field non-editable
+              readOnly 
               style={inputStyles}
             />
           </div>
@@ -217,19 +210,18 @@ const IncidentForm = () => {
   );
 };
 
-// Styles
 const containerStyles = {
   display: 'flex',
   flexDirection: 'row',
   paddingTop: '60px',
-  height: '100vh', // Full height of the viewport
-  width: '100vw', // Full width of the viewport
+  height: '100vh', 
+  width: '100vw',
   position: 'relative',
   zIndex: '1',
 };
 
 const formContainerStyles = {
-  flex: 2, // Increased flex value to make the form wider
+  flex: 2, 
   padding: '20px',
   backgroundColor: '#1E1E1E',
   color: '#fff',
@@ -237,8 +229,7 @@ const formContainerStyles = {
 };
 
 const mapContainerStyles = {
-  flex: 5, // Decreased flex value to reduce the map width
-  // marginLeft: '10px', // Maintain some space between form and map
+  flex: 5, 
   borderRadius: '8px',
   overflow: 'hidden',
 };
@@ -275,7 +266,7 @@ const smallButtonStyles = {
   color: 'white',
   border: 'none',
   cursor: 'pointer',
-  marginLeft: '10px', // Add margin to ensure spacing between input and button
+  marginLeft: '10px', 
 };
 
 const inputStyles = {
@@ -283,7 +274,7 @@ const inputStyles = {
   fontSize: '14px',
   borderRadius: '4px',
   border: '1px solid #ccc',
-  flex: '1', // Allows input to take up the remaining space
+  flex: '1', 
 };
 
 const buttonStyles = {

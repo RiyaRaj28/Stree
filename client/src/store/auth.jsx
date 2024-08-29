@@ -2,7 +2,6 @@ import { createContext, useContext } from "react"
 import { useState, useEffect } from "react"
 const backendUrl = import.meta.env.VITE_BACKEND_URL
 
-
 export const AuthContext = createContext();
 
 export const AuthProvider = ({children}) => {
@@ -13,25 +12,22 @@ export const AuthProvider = ({children}) => {
         return localStorage.setItem('token', serverToken);
     }
 
-
     const LogoutUser = () => { 
         setToken("");
         localStorage.removeItem('token');
      }
 
      let isLoggedIn = !!token;
-     console.log("isLoggedIn : ", isLoggedIn);
 
      const userAuthentication = async () => {
         try{
             const response = await fetch(`${backendUrl}/api/auth/getUser`, {
                 method : "GET",
                 headers : {
-                    // "Content-Type" : "application/json",
+                    "Content-Type" : "application/json",
                     "Authorization" : `Bearer ${token}`
                 }
             });
-            console.log("token from userAuthentication : ", token);
 
             if (!response.ok) {
                 console.error(`Error: ${response.status} - ${response.statusText}`);
@@ -43,7 +39,7 @@ export const AuthProvider = ({children}) => {
             if(response.ok)
             {
                 const data = await response.json();
-                console.log("data from userAuthentication : ", data.userData);
+                // console.log("data from userAuthentication : ", data.userData);
                 setUser(data.userData);
             }
 
@@ -59,7 +55,7 @@ export const AuthProvider = ({children}) => {
  
 
     return (
-        <AuthContext.Provider value = {{ isLoggedIn, storeTokenInLS, LogoutUser, user }}>
+        <AuthContext.Provider value = {{ isLoggedIn, storeTokenInLS, LogoutUser, user,token }}>
             {children}
         </AuthContext.Provider>
     )

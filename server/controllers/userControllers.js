@@ -25,11 +25,10 @@ const getUserIncidents = async (req, res) => {
     }
   };
 
-// Update an incident reported by the logged-in user
 const updateUserIncident = async (req, res) => {
     try {
       const incident = await Incident.findOneAndUpdate(
-        { _id: req.params.id, user: req.userId }, // Ensure user can only update their own incidents
+        { _id: req.params.id, user: req.userId }, 
         req.body,
         { new: true }
       );

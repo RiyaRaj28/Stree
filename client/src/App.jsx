@@ -21,10 +21,8 @@ import UserProfile from './pages/UserProfile';
 function App() {
   const location = useLocation();
 
-  // Define the routes where you don't want to display the header and footer
   const noHeaderFooterRoutes = ['/login', '/register'];
 
-  // Check if the current route matches any of the defined paths
   const shouldHideHeaderFooter = noHeaderFooterRoutes.includes(location.pathname);
 
   return (

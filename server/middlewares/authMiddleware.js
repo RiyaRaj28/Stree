@@ -9,7 +9,7 @@ const authMiddleware = async (req, res, next) => {
 
         try{
             const jwtToken = token.replace("Bearer", "").trim();
-            console.log("token from middleware ", jwtToken); 
+            // console.log("token from backend,", jwtToken); 
 
             const isVerified = jwt.verify(jwtToken, process.env.JWT_SECRET_KEY);
 
@@ -17,9 +17,8 @@ const authMiddleware = async (req, res, next) => {
             console.log(userData);
 
             req.user = userData;
-            req.token = token; 
-            req.userId = userData._id; 
-
+            req.token = jwtToken;
+            req.userId = userData._id;
             next();
         }catch (error)
         {

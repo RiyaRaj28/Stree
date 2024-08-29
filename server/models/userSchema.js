@@ -7,7 +7,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         unique: true,
         required: true,
-        lowercase: true,         // Converts the email to lowercase before saving
+        lowercase: true,         
         trim: true, 
     },
     password: {

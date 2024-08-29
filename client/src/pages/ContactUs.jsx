@@ -89,7 +89,7 @@ function ContactUs() {
                                     value={contact.userName}
                                     onChange={handleInput}
                                     required
-                                    readOnly // Prevent user from editing the username
+                                    readOnly 
                                 />
                             </div>
 
@@ -103,7 +103,7 @@ function ContactUs() {
                                     value={contact.email}
                                     onChange={handleInput}
                                     required
-                                    readOnly // Prevent user from editing the email
+                                    readOnly 
                                 />
                             </div>
 

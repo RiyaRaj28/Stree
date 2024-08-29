@@ -18,10 +18,10 @@
     .container {
         max-width: 1200px;
         margin: 0 auto;
-        display: grid; /* Change flexbox to grid */
-        grid-template-columns: 1fr 2fr; /* Define two columns, one for the image and one for the form */
+        display: grid; 
+        grid-template-columns: 1fr 2fr; 
         gap: 2rem;
-        align-items: center; /* Ensure items are vertically aligned */
+        align-items: center; 
     }
   
     .contact-img {
@@ -30,8 +30,8 @@
         align-items: center;
         
         img {
-            width: 100%; /* Set the width to 100% */
-            max-width: 500px; /* Set a max-width for better fit */
+            width: 100%;
+            max-width: 500px; 
             height: auto;
             border-radius: 0.25rem;
         }
@@ -50,7 +50,7 @@
   
         label {
             display: block;
-            margin-bottom: 0.5rem; /* Adjust margin for labels */
+            margin-bottom: 0.5rem; 
             text-transform: capitalize;
             color: var(--text-pink-900);
             font-size: 1rem;
