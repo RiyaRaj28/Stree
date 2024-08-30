@@ -1,9 +1,14 @@
 const express = require('express');
-const router = express.Router();
-const User = require('../models/userSchema');
-const controller = require('../controllers/userControllers');
+const userRouter = express.Router();
+const userController = require('../controllers/userControllers');
+const authMiddleware = require('../middlewares/authMiddleware');
 
-router.get("/", controller.getHello);
-router.post("/createUser", controller.createUser);
+userRouter.get("/", userController.getHello);
+userRouter.post("/createUser", userController.createUser);
+userRouter.get('/incidents', authMiddleware, userController.getUserIncidents); 
+userRouter.patch('/incidents/:id', authMiddleware, userController.updateUserIncident); 
+userRouter.delete('/incidents/:id', authMiddleware, userController.deleteUserIncident); 
 
-module.exports = router;
+
+module.exports = userRouter;
+module.exports = userRouter;

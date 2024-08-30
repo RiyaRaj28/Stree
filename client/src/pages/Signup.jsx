@@ -10,8 +10,7 @@ function Signup() {
                 <FormHeading heading={"Sign Up"} />
                 <AuthInput labelText={"Enter your email"} placeholderText={"abc@gmail.com"} inputType={"email"} inputFor={"email"} />
                 <AuthInput labelText={"Enter your password"} placeholderText={"********"} inputType={"password"} inputFor={"password"} />
-                <AuthInput labelText={"Enter your first name"} placeholderText={"Your First Name"} inputType={"text"} inputFor={"firstName"} />
-                <AuthInput labelText={"Enter your last name"} placeholderText={"Your Last Name"} inputType={"text"} inputFor={"lastName"} />
+                <AuthInput labelText={"Enter your user name"} placeholderText={"Your First Name"} inputType={"text"} inputFor={"firstName"} />
                 <FormSubmit />
             </form>
         </div>

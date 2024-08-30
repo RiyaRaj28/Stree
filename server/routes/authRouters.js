@@ -1,23 +1,16 @@
 const express = require("express");
-
+const authController = require("../controllers/authControllers");
+const authSchemas = require("../validators/authValidator");
+const validate = require("../middlewares/validateMiddleware");
+const authMiddleware = require("../middlewares/authMiddleware");
+const loginvalidation = require("../middlewares/loginValidation")
 const authRouter = express.Router();
 
-authRouter.post('/login', function(req, res){
-    const email = req.body.email;
-    const password = req.body.password;
-    res.json({
-        msg : "login"
-    })
-})
+authRouter.post('/login', loginvalidation, validate(authSchemas.loginSchema), authController.login);
+authRouter.post('/register', validate(authSchemas.registerSchema), authController.register);
+authRouter.get('/getUser', authMiddleware, authController.getUser);
 
-authRouter.post('/register', function(req, res){
-    const email = req.body.email;
-    const password = req.body.password;
-    const firstName = req.body.firstName;
-    const lastName = req.body.lastName;
-    res.json({
-        msg : "register"
-    })
-})
+
+
 
 module.exports = authRouter
