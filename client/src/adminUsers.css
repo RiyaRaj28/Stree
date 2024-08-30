@@ -1,0 +1,72 @@
+header {
+    background-color: #1a1a1a;
+    padding: 1rem 0; /* Adjust this padding if needed */
+}
+
+.container {
+    font-weight: 600;
+    font-size: 40px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem;
+}
+
+.admin-users-section {
+    background-color: #1a1a1a;
+    padding: 2rem 0;
+}
+
+.admin-users {
+    max-width: 80%;
+    margin: 0 auto;
+    background: #1a1a1a;
+    padding: 1rem; /* Reduced padding */
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
+}
+
+.admin-users h1 {
+    color: #fff;
+    text-align: left; /* Changed alignment */
+    margin-bottom: 1rem;
+    font-size: 1.5rem; /* Adjusted font size */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    margin-bottom: 2rem; /* Added margin-bottom */
+}
+
+thead th {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+tbody tr {
+    border-bottom: 1px solid #444;
+}
+
+tbody td {
+    padding: 1rem;
+    font-size: 1rem;
+    color: #ccc;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #a83279;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #922d6e;
+}
