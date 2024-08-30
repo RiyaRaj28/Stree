@@ -9,17 +9,11 @@ function Footer() {
           <h4 className="text-xl font-bold text-purple-300">Stree</h4>
           <p className="mt-2 text-sm">For our fierce warriors and their never diminishing light</p>
         </div>
-        <div className="mb-6 md:mb-0">
-          <h4 className="text-xl font-bold text-purple-300">HOME</h4>
-          <ul className="mt-2 space-y-2 text-sm">
-            <li><Link to="/about-us" className="hover:text-purple-400">About us</Link></li>
-            <li><Link to="/feedback" className="hover:text-purple-400">Feedback</Link></li>
-          </ul>
-        </div>
+
         <div className="mb-6 md:mb-0">
           <h4 className="text-xl font-bold text-purple-300">ABOUT US</h4>
           <ul className="mt-2 space-y-2 text-sm">
-            <li><Link to="/about-team" className="hover:text-purple-400">About team</Link></li>
+            {/* <li><Link to="/about-team" className="hover:text-purple-400">About team</Link></li> */}
             <li><Link to="/contact-us" className="hover:text-purple-400">Contact us</Link></li>
           </ul>
         </div>

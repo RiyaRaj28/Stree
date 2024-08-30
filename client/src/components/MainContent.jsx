@@ -10,7 +10,7 @@ function MainContent() {
           <p className="text-xl mt-4">For our fierce warriors and their never diminishing light.</p>
 
           <div className="mt-16 space-y-6 ">
-        <Link to="/report-incident">
+        <Link to="/incident-form">
           <div className="group m-2 w-96 h-16 bg-pink-600 hover:bg-pink-700 text-white text-lg font-semibold flex items-center justify-between px-6 cursor-pointer rounded-lg transition-all duration-300">
             <span>Report Incident</span>
             <span
@@ -21,7 +21,7 @@ function MainContent() {
           </div>
         </Link>
 
-        <Link to="/view-incidents">
+        <Link to="/map">
           <div className="group m-2 w-80 h-16 bg-pink-500 hover:bg-pink-600 text-white text-lg font-semibold flex items-center justify-between px-6 cursor-pointer rounded-lg transition-all duration-300">
             <span>View Incidents</span>
             <span

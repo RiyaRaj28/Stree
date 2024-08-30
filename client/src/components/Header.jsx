@@ -32,9 +32,9 @@ function Header() {
               <Link to="/helpline" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                 Helpline
               </Link>
-              <Link to="/forum" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              {/* <Link to="/forum" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                 Forum
-              </Link>
+              </Link> */}
               <Link to="/incident-form" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                 Report Incident
               </Link>
@@ -44,6 +44,9 @@ function Header() {
               <Link to="/user-profile" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                 User Profile
               </Link>
+              <Link to="/contact-us" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                Contact us
+              </Link> 
             { isLoggedIn  ? 
               ( <Link to="/logout" onClick = {LogoutUser} className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                 Logout
@@ -62,9 +65,7 @@ function Header() {
               {/* <Link to="/about-us" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                 About us
               </Link> */}
-              <Link to="/contact-us" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                Contact us
-              </Link> 
+
             </div>
             <div className="md:hidden">
               <button
