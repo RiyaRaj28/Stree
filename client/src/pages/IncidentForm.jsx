@@ -14,7 +14,6 @@ const IncidentForm = () => {
   const [longitude, setLongitude] = useState(null);
   const { user, token } = useAuth(); 
   const [mytoken,setMytoken] = useState(token);
-
   const [name, setName] = useState('');
 
   useEffect(() => {
@@ -70,8 +69,6 @@ const IncidentForm = () => {
       },
     };
     
-    const token = user?.token; 
-
     try {
       const config =  {
           "headers": {

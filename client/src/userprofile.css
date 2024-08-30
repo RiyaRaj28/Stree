@@ -1,0 +1,162 @@
+.user-profile {
+    max-width: 80%; 
+    width: 100%; 
+    margin: 0 auto; 
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.user-profile h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+.profile-info {
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    background-color: pink;
+    height: 300px;
+
+}
+
+.profile-image {
+    flex-shrink: 0;
+    margin-right: 20px;
+    text-align: center;
+}
+
+.profile-image img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ddd;
+}
+
+.profile-image .placeholder-image {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #ddd;
+    color: #888;
+    font-size: 1rem;
+}
+
+.profile-image input[type="file"] {
+    margin-top: 10px;
+    width: 2rem;
+}
+
+.profile-details p {
+    margin: 5px 0;
+    font-size: 1.5rem;
+    color: #555;
+}
+
+.profile-details strong {
+    color: #333;
+}
+
+.incidents-list {
+    margin-top: 30px;
+}
+
+.incidents-list h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.incidents {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 15px;
+    width: 95%;
+}
+
+.incidents h3 {
+    margin: 0 0 10px;
+    color: #ee47a3;
+    font-style: bold;
+    font-size: 20px;
+    text-align: center;
+}
+
+.incidents p {
+    padding: 5px;
+    margin: 0 0 10px;
+    color: #e6b2d2;
+    text-align: center;
+}
+
+.incidents small {
+    text-align: center;
+    color: #999;
+    font-size: 15px;
+}
+
+.gradient-custom {
+    background: linear-gradient(to right bottom, #ff79b0, #ba68c8); 
+}
+
+.gradient-custom .h5 {
+    font-size: 2.5rem; 
+    margin-top: 10px;
+}
+
+.py-5 {
+     padding-top: 3.2rem; 
+    padding-bottom: 1rem; 
+}
+
+.container {
+    max-width: 100vw;
+}
+
+.grid-two-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px; 
+}
+
+.grid-three-cols {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; 
+}
+
+.card {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #ddd;
+}
+
+.card-img img {
+    width: 60%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.card-details {
+    text-align: center;
+    margin-top: 15px;
+}
+
+
