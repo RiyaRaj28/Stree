@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FaPhoneAlt, FaRegMoneyBillAlt, FaFileAlt, FaPiggyBank, FaBabyCarriage, FaPlayCircle, FaVideo, FaHeadphones, FaPodcast, FaDollarSign, FaInfoCircle, FaUniversity, FaHandsHelping, FaEnvelope, FaPassport, FaBookReader, FaGlobeAmericas, FaGraduationCap, FaChalkboard, FaBookOpen, FaLaptopCode, FaLightbulb, FaGavel, FaHome, FaUserGraduate, FaChalkboardTeacher, FaHeartbeat, FaChevronDown, FaChevronUp, FaGlobe, FaHandHoldingHeart, FaFlag } from "react-icons/fa";
+import { FaPhoneAlt, FaLinkedin, FaUserTie, FaBook, FaBriefcase, FaRegMoneyBillAlt, FaFileAlt, FaPiggyBank, FaBabyCarriage, FaPlayCircle, FaVideo, FaHeadphones, FaPodcast, FaDollarSign, FaInfoCircle, FaUniversity, FaHandsHelping, FaEnvelope, FaPassport, FaBookReader, FaGlobeAmericas, FaGraduationCap, FaChalkboard, FaBookOpen, FaLaptopCode, FaLightbulb, FaGavel, FaHome, FaUserGraduate, FaChalkboardTeacher, FaHeartbeat, FaChevronDown, FaChevronUp, FaGlobe, FaHandHoldingHeart, FaFlag } from "react-icons/fa";
 
 function Resources() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -12,7 +12,7 @@ function Resources() {
     <>
       <div className="min-h-screen w-full bg-gradient-to-br from-pink-50 to-pink-100 py-10">
         <div className="max-w-7xl mx-auto text-center py-12">
-          <h1 className="text-4xl font-bold text-pink-900">Women&apos;s Safety & Helpline Services in India</h1>
+          <h1 className="text-4xl font-bold text-pink-900">Women&apos;s Education and Career Guidance in STEM</h1>
           <p className="mt-4 text-lg text-gray-600">
             A resource page to help women in India get access to emergency contact numbers, legal assistance, counseling services, and much more.
           </p>
@@ -24,13 +24,13 @@ function Resources() {
           alt="Issues"
         />
 
-        {/* Helplines */}
-        <div className="max-w-5xl mx-auto p-6 rounded-lg shadow-lg hover:shadow-2xl hover:bg-pink-50 transform transition duration-300 ease-in-out hover:scale-100 mb-8">
+        {/* Women in Tech career resources */}
+        <div className="max-w-5xl mx-auto bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl hover:bg-pink-50 transform transition duration-300 ease-in-out hover:scale-100 mb-8">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-semibold text-pink-900">National Commission for Women (NCW)</h2>
+            <h2 className="text-3xl font-semibold text-pink-900">Women in Tech Career Resources</h2>
             <p className="mt-4 text-gray-600">
-              The National Commission for Women (NCW) is a statutory body of the Government of India, tasked with advising on policy matters affecting women and ensuring their protection and empowerment.
-              <a href="http://www.ncw.nic.in/helplines" className="text-black underline hover:no-underline hover:text-pink-800"> Read more</a>
+              Discover various career opportunities, training programs, and resources specifically designed to empower women in the tech industry. Stay informed about job openings, internships, and more.
+              <a href="https://example.com/career-opportunities" className="text-black underline hover:no-underline hover:text-pink-800"> Read more</a>
             </p>
           </div>
           <div className="relative">
@@ -38,70 +38,80 @@ function Resources() {
               className="flex items-center justify-between w-full text-left bg-pink-200 px-4 py-3 rounded-lg text-pink-900 font-semibold shadow-md"
               onClick={toggleDropdown}
             >
-              <span><FaPhoneAlt className="text-pink-600 text-2xl mr-3 inline-block" aria-label="Phone icon" />Women Helpline (All India): 1091</span>
+              <span><FaBriefcase className="text-pink-600 text-2xl mr-3 inline-block" aria-label="Briefcase icon" />Current Job Openings</span>
               {isDropdownOpen ? <FaChevronUp className="text-pink-600 text-2xl" /> : <FaChevronDown className="text-pink-600 text-2xl" />}
             </button>
 
             {isDropdownOpen && (
               <div className="bg-white mt-4 rounded-lg shadow-lg p-4">
                 <ul className="space-y-2 text-md">
-                  <li><FaPhoneAlt className="text-gray-600 mr-2 inline-block" /> <strong>National Emergency Number:</strong> <a href="tel:112" className="text-pink-500">112</a></li>
-                  <li><FaPhoneAlt className="text-gray-600 mr-2 inline-block" /> <strong>Police:</strong> <a href="tel:100" className="text-pink-500">100</a></li>
-                  <li><FaPhoneAlt className="text-gray-600 mr-2 inline-block" /> <strong>Delhi Women Helpline:</strong> <a href="tel:181" className="text-pink-500">181</a></li>
-                  <li><FaPhoneAlt className="text-gray-600 mr-2 inline-block" /> <strong>Domestic Abuse Helpline:</strong> <a href="tel:181" className="text-pink-500">181</a></li>
-                  </ul>
-                <p className="mt-4 text-sm text-gray-400">Other helplines:</p>
+                  <li><FaBriefcase className="text-gray-600 mr-2 inline-block" /> <strong>Software Developer:</strong> <a href="https://www.diversifytech.com/job-board/#browse" className="text-pink-500">Apply Now</a></li>
+                  <li><FaBriefcase className="text-gray-600 mr-2 inline-block" /> <strong>Data Scientist:</strong> <a href="https://www.diversifytech.com/job-board/#browse" className="text-pink-500">Apply Now</a></li>
+                  <li><FaBriefcase className="text-gray-600 mr-2 inline-block" /> <strong>UI/UX Designer:</strong> <a href="https://www.diversifytech.com/job-board/#browse" className="text-pink-500">Apply Now</a></li>
+                  <li><FaBriefcase className="text-gray-600 mr-2 inline-block" /> <strong>Project Manager:</strong> <a href="https://www.diversifytech.com/job-board/#browse" className="text-pink-500">Apply Now</a></li>
+                </ul>
+                <p className="mt-4 text-sm text-gray-400">Explore more opportunities:</p>
                 <ul className="mt-2 space-y-1 text-sm text-gray-400">
-                  <li><a href="tel:1098" className="text-pink-500 hover:underline">Child Helpline: 1098</a></li>
-                  <li><a href="tel:14567" className="text-pink-500 hover:underline">Senior Citizen Helpline: 14567</a></li>
-                  <li><a href="tel:08046110007" className="text-pink-500 hover:underline">Mental Health Helpline: 08046110007</a></li>
+                  <li><a href="https://example.com/internships" className="text-pink-500 hover:underline">Internships</a></li>
+                  <li><a href="https://example.com/training-programs" className="text-pink-500 hover:underline">Training Programs</a></li>
+                  <li><a href="https://example.com/certifications" className="text-pink-500 hover:underline">Certifications</a></li>
                 </ul>
               </div>
             )}
           </div>
         </div>
 
+
         {/* Counseling */}
         <div className="bg-white max-w-5xl mx-auto p-6 rounded-lg shadow-lg hover:shadow-2xl hover:bg-pink-50 transform transition duration-300 ease-in-out hover:scale-100 mb-8">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl font-semibold text-pink-900">iCall Counseling Helpline</h2>
-            <p className="mt-4 text-gray-600">
-              iCall (Indian Centre for Advancement of Community Mental Health) provides psychological support and counseling services for mental health issues. They offer helplines for immediate support and guidance.
-              <a href="https://icallhelpline.org" className="text-black underline hover:no-underline hover:text-pink-800"> Read more</a>
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div>
-              <p className="text-gray-600">Get support via email:</p>
-              <ul className="mt-4 space-y-2 text-lg">
-                <li><strong><FaEnvelope className="text-pink-600 text-3xl mr-3 inline-block" aria-label="Email icon" />iCall (TISS) Counseling Helpline:</strong> <a href="mailto:icall@tiss.edu" className="text-pink-500">icall@tiss.edu</a></li>
-              </ul>
-            </div>
-            <div>
-              <p className="text-gray-600">Mental health and counseling services:</p>
-              <ul className="mt-4 space-y-2 text-lg">
-                <li><strong><FaHeartbeat className="text-pink-600 text-3xl mr-3 inline-block" aria-label="Heart icon" />iCall (TISS) Counseling Helpline:</strong> <a href="tel:02225521111" className="text-pink-500">022-25521111</a></li>
-                <li><strong><FaGlobe className="text-pink-600 text-3xl mr-3 inline-block" aria-label="Globe icon" />iCall Website:</strong> <a href="https://icallhelpline.org" className="text-pink-500" target="_blank" rel="noopener noreferrer">icallhelpline.org</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-          {/*... */}
-          <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl hover:bg-pink-50 transform transition duration-300 ease-in-out hover:scale-100 mx-auto">
-    <div className="flex items-center mb-4">
-        <FaLightbulb className="text-pink-600 text-3xl mr-3" aria-label="Lightbulb icon" />
-        <h2 className="text-2xl font-semibold text-pink-900">Mentorship for Women in STEM</h2>
+  <div className="text-center mb-8">
+    <h2 className="text-3xl font-semibold text-pink-900">Career Development Resources</h2>
+    <p className="mt-4 text-gray-600">
+      Explore various resources that help women advance in their careers and education. These platforms provide guidance, courses, and opportunities to grow professionally.
+      <a href="https://www.careerguide.com" className="text-black underline hover:no-underline hover:text-pink-800"> Read more</a>
+    </p>
+  </div>
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div>
+      <p className="text-gray-600">Professional Networking:</p>
+      <ul className="mt-4 space-y-2 text-lg">
+        <li><strong><FaLinkedin className="text-pink-600 text-3xl mr-3 inline-block" aria-label="LinkedIn icon" />LinkedIn:</strong> <a href="https://www.linkedin.com" className="text-pink-500">linkedin.com</a></li>
+        <li><strong><FaUserTie className="text-pink-600 text-3xl mr-3 inline-block" aria-label="Career icon" />Shenomics:</strong> <a href="https://www.shenomics.com" className="text-pink-500">shenomics.com</a></li>
+      </ul>
     </div>
-    <p className="text-gray-600">Connect with experienced mentors who guide women in Science, Technology, Engineering, and Mathematics (STEM) to advance their careers and education.</p>
-    <ul className="mt-4 space-y-2 text-lg">
-        <li><FaUserGraduate className="text-pink-600 mr-2 inline-block" /><strong>STEM Mentorship Program:</strong> <a href="https://www.stemmentorship.org" className="text-pink-500" target="_blank" rel="noopener noreferrer">Visit Website</a></li>
-        <li><FaChalkboardTeacher className="text-pink-600 mr-2 inline-block" /><strong>Find a Mentor:</strong> <a href="https://www.findamentor.org" className="text-pink-500" target="_blank" rel="noopener noreferrer">Find a Mentor</a></li>
-    </ul>
+    <div>
+      <p className="text-gray-600">Skill Development:</p>
+      <ul className="mt-4 space-y-2 text-lg">
+        <li><strong><FaBook className="text-pink-600 text-3xl mr-3 inline-block" aria-label="Book icon" />Coursera for Women:</strong> <a href="https://www.coursera.org" className="text-pink-500">coursera.org</a></li>
+        <li><strong><FaChalkboardTeacher className="text-pink-600 text-3xl mr-3 inline-block" aria-label="Teacher icon" />Women Who Code:</strong> <a href="https://www.womenwhocode.com" className="text-pink-500">womenwhocode.com</a></li>
+      </ul>
+    </div>
+    <div>
+      <p className="text-gray-600">Educational Opportunities:</p>
+      <ul className="mt-4 space-y-2 text-lg">
+        <li><strong><FaUniversity className="text-pink-600 text-3xl mr-3 inline-block" aria-label="University icon" />EdX Women's Scholarships:</strong> <a href="https://www.edx.org/scholarships" className="text-pink-500">edx.org/scholarships</a></li>
+        <li><strong><FaGraduationCap className="text-pink-600 text-3xl mr-3 inline-block" aria-label="Graduation cap icon" />Scholarship for Women in STEM:</strong> <a href="https://www.scholarships.com" className="text-pink-500">scholarships.com</a></li>
+      </ul>
+    </div>
+  </div>
 </div>
 
-          {/* Shelter Services */}
+
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+          {/*Mentorship for women in STEM */}
+          <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl hover:bg-pink-50 transform transition duration-300 ease-in-out hover:scale-100 mx-auto">
+            <div className="flex items-center mb-4">
+                <FaLightbulb className="text-pink-600 text-3xl mr-3" aria-label="Lightbulb icon" />
+                <h2 className="text-2xl font-semibold text-pink-900">Mentorship for Women in STEM</h2>
+            </div>
+            <p className="text-gray-600">Connect with experienced mentors who guide women in Science, Technology, Engineering, and Mathematics (STEM) to advance their careers and education.</p>
+            <ul className="mt-4 space-y-2 text-lg">
+                <li><FaUserGraduate className="text-pink-600 mr-2 inline-block" /><strong>STEM Mentorship Program:</strong> <a href="https://www.stemmentorship.org" className="text-pink-500" target="_blank" rel="noopener noreferrer">Visit Website</a></li>
+                <li><FaChalkboardTeacher className="text-pink-600 mr-2 inline-block" /><strong>Find a Mentor:</strong> <a href="https://www.findamentor.org" className="text-pink-500" target="_blank" rel="noopener noreferrer">Find a Mentor</a></li>
+            </ul>
+          </div>
+
+          {/* Free online courses */}
           <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl hover:bg-pink-50 transform transition duration-300 ease-in-out hover:scale-100 mx-auto">
               <div className="flex items-center mb-4">
                   <FaLaptopCode className="text-pink-600 text-3xl mr-3" aria-label="Laptop icon" />
@@ -116,7 +126,7 @@ function Resources() {
           </div>
 
 
-          {/* Health Services */}
+          {/* Finanacial aid, scholarships, etc */}
           <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl hover:bg-pink-50 transform transition duration-300 ease-in-out hover:scale-100 mx-auto">
             <div className="flex items-center mb-4">
                 <FaPiggyBank className="text-pink-600 text-3xl mr-3" aria-label="Piggy bank icon" />
@@ -131,7 +141,7 @@ function Resources() {
         </div>
 
 
-           {/* Human Rights */}
+           {/* International scholarships */}
            <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl hover:bg-pink-50 transform transition duration-300 ease-in-out hover:scale-100 mx-auto">
                 <div className="flex items-center mb-4">
                     <FaGlobeAmericas className="text-pink-600 text-3xl mr-3" aria-label="Globe icon" />
@@ -146,7 +156,7 @@ function Resources() {
             </div>
 
 
-        {/* Tarshi Counseling */}
+        {/* Childcare support*/}
         <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl hover:bg-pink-50 transform transition duration-300 ease-in-out hover:scale-100 mx-auto">
           <div className="flex items-center mb-4">
               <FaBabyCarriage className="text-pink-600 text-3xl mr-3" aria-label="Baby carriage icon" />
@@ -161,7 +171,7 @@ function Resources() {
       </div>
 
 
-        {/* Tarshi Counseling */}
+        {/* Podcasts, videos focusing on women's education */}
         <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl hover:bg-pink-50 transform transition duration-300 ease-in-out hover:scale-100 mx-auto">
           <div className="flex items-center mb-4">
               <FaPodcast className="text-pink-600 text-3xl mr-3" aria-label="Podcast icon" />
