@@ -47,7 +47,7 @@ function RegisterForm() {
           userName: '',
         });
 
-        navigate("/login");
+        navigate("/");
       }
 
       // const data = await response.json();

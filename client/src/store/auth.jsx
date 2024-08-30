@@ -7,8 +7,10 @@ export const AuthContext = createContext();
 export const AuthProvider = ({children}) => {
     const [token, setToken] = useState(localStorage.getItem('token'));
     const [user, setUser] = useState("");
+        // const [incidents, setIncidents] = useState([]);
 
     const storeTokenInLS = (serverToken) => {   
+        setToken(serverToken);
         return localStorage.setItem('token', serverToken);
     }
 
@@ -49,13 +51,35 @@ export const AuthProvider = ({children}) => {
         }
     }
 
+    const getUserIncidents = async () => {
+        try {
+            const response = await fetch(`${backendUrl}/api/users/incidents`, {
+                method : "GET",
+                headers : {
+                    "Content-Type" : "application/json",
+                    "Authorization" : `Bearer ${token}`
+                }
+            });
+
+            if(response.ok)
+                {
+                    const data = await response.json();
+                    // console.log("data from getServices : ", data.incidents);
+                    return data.incidents;
+                }
+
+        }catch (error) {
+            console.error("error from getServices : ", error);
+        }
+        return [];
+    }
+    
     useEffect(() => {
         userAuthentication(); 
      }, []); 
- 
 
     return (
-        <AuthContext.Provider value = {{ isLoggedIn, storeTokenInLS, LogoutUser, user,token }}>
+        <AuthContext.Provider value = {{ isLoggedIn, storeTokenInLS, LogoutUser, user,token, getUserIncidents }}>
             {children}
         </AuthContext.Provider>
     )
