@@ -11,7 +11,7 @@ function Header() {
   };
 
   return (
-    <nav className="bg-gray-800 text-white fixed w-full z-10">
+    <nav className="bg-gray-800 text-white fixed w-full z-10 border-b-2 border-gray-900/5 shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
