@@ -73,10 +73,4 @@ export default function AppWrapper() {
     </Router>
   );
 }
-export default function AppWrapper() {
-  return (
-    <Router>
-      <App />
-    </Router>
-  );
-}
+
