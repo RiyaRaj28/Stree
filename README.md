@@ -70,7 +70,7 @@ Stree is a women-centric web application designed to provide essential resources
      ```plaintext
      MONGO_URI=your_mongodb_uri
      JWT_SECRET_KEY=your_jwt_secret_key
-     FRONTEND_URL=http://localhost:xyxy
+     FRONTEND_URL=http://localhost:your_local_port
      ```
 
    - **Example for `client/.env`**:
@@ -97,7 +97,7 @@ Stree is a women-centric web application designed to provide essential resources
 
 ## Access the application
 
-- Open your browser and go to http://localhost:3000 to view the application.
+- Open your browser and go to http://localhost:your_local_port to view the application.
 
 
 ## Contributions
