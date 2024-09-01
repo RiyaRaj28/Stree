@@ -8,34 +8,19 @@ import { IoMdHome } from "react-icons/io";
 function AdminLayout() {
     return (
         <>
-            <header>
-                <div className="container" style={{ padding: "15rem" }}>
-                    <nav>
-                        <ul>
-                            <li><NavLink to="/"> <IoMdHome style={{ color: "magenta" }} /> Home </NavLink></li>
-                            <li>
-                                <NavLink to="/admin/users">
-                                    <FaUser style={{ color: "magenta" }} /> Users
-                                </NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/admin/incidents">
-                                    <MdOutlineSportsKabaddi style={{ color: "magenta" }} /> Incidents
-                                </NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/admin/contact">
-                                    <MdMessage style={{ color: "magenta" }} /> Contact
-                                </NavLink>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </header>
+            <div className="container" style={{ paddingTop: "7rem" }}>
+                <nav>
+                    <ul>
+                        <li><NavLink to="/" activeClassName="active"><IoMdHome style={{ color: "magenta" }} /> Home </NavLink></li>
+                        <li><NavLink to="/admin/users" activeClassName="active"><FaUser style={{ color: "magenta" }} /> Users </NavLink></li>
+                        <li><NavLink to="/admin/incidents" activeClassName="active"><MdOutlineSportsKabaddi style={{ color: "magenta" }} /> Incidents </NavLink></li>
+                        <li><NavLink to="/admin/contacts" activeClassName="active"><MdMessage style={{ color: "magenta" }} /> Contact</NavLink></li>
+                    </ul>
+                </nav>
+            </div>
             <Outlet />
         </>
     );
 }
 
 export default AdminLayout;
-
