@@ -4,10 +4,7 @@ import { useAuth } from '../store/auth';
 import '../../src/adminUsers.css'
 import { Link} from "react-router-dom";
 
-
-
 const AdminUsers = () => {
-
     const { user, token } = useAuth();
     const [mytoken, setMytoken] = useState(token);
     const [users, setUsers] = useState([]);
@@ -63,7 +60,7 @@ const AdminUsers = () => {
     return (
         <>
             <section className="admin-users-section">
-                <div className="container"> <h1>User Data</h1></div>
+                <div className="container"> <h2>Users Data</h2></div>
                 <div className="container admin-users">
                     <table>
                         <thead>
@@ -82,8 +79,8 @@ const AdminUsers = () => {
 
                                         <td>{user.userName}</td>
                                         <td >{user.email} </td>
-                                        <td><button><Link to = {`admin/users/${user._id}/edit`}> </Link> Edit </button></td>
-                                        <td><button onClick={()=> deleteUser(user._id)}>Delete</button></td>
+                                        <td><button className="edit-delete" ><Link to = {`admin/users/${user._id}/edit`}> </Link> Edit </button></td>
+                                        <td><button className="edit-delete" onClick={()=> deleteUser(user._id)}>Delete</button></td>
 
                                     </tr>
                                 );
