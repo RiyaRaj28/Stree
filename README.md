@@ -101,7 +101,6 @@ One of Stree's standout features is an interactive map that allows users to pinp
 - **Node.js & Express**: Backend framework for handling requests and routing.
 - **MongoDB & Mongoose**: Database and ORM for storing and managing data.
 - **JWT (jsonwebtoken)**: For handling user authentication and security.
-- **Multer**: For handling file uploads.
 - **Zod**: For schema validation.
 - **bcryptjs**: For hashing passwords.
 
