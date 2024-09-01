@@ -53,14 +53,14 @@ export const AuthProvider = ({children}) => {
 
     const getUserIncidents = async () => {
         try {
-            const response = await fetch(`${backendUrl}/api/users/incidents`, {
-                method : "GET",
-                headers : {
-                    "Content-Type" : "application/json",
-                    "Authorization" : `Bearer ${token}`
+            const config = {
+                "method": "GET",
+                "headers": {
+                    Authorization: `Bearer ${token}`,
+                    "Content-Type": "application/json",
                 }
-            });
-
+            };
+            const response = await fetch(`${backendUrl}/api/users/incidents`, config) 
             if(response.ok)
                 {
                     const data = await response.json();

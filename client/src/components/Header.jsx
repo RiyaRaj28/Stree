@@ -48,7 +48,7 @@ function Header() {
                 Contact us
               </Link> 
             { isLoggedIn  ? 
-              ( <Link to="/logout" onClick = {LogoutUser} className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              ( <Link to="/login" onClick = {LogoutUser} className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                 Logout
               </Link> )
              :
