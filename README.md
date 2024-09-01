@@ -183,7 +183,7 @@ Profile Link: [https://github.com/RiyaRaj28](https://github.com/RiyaRaj28)
 
 Imrana Sumbul - [Imrana Sumbul](https://linkedin.com/)
 
-Profile Link: ([https://github.com/VishrutAggarwal](https://github.com/imranasumbul))
+Profile Link:[https://github.com/imranasumbul](https://github.com/imranasumbul)
 
 <br>
 
