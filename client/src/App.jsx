@@ -28,6 +28,7 @@ import UserProfile from './pages/UserProfile';
 
 function App() {
   const location = useLocation();
+  
 
   const noHeaderFooterRoutes = ['/login', '/register'];
 
