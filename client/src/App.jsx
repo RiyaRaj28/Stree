@@ -5,7 +5,7 @@ const Resources = React.lazy(() => import('./pages/Resources'));
 const Login = React.lazy(() => import('./pages/Login'));
 const Forum = React.lazy(() => import('./pages/Forum'));
 const Header = React.lazy(() => import('./components/Header'));
-const Register = React.lazy(() => import('./pages/Signup'));
+const Register = React.lazy(() => import('./pages/Register'));
 const Helpline = React.lazy(() => import('./pages/Helpline'));
 const AboutUs = React.lazy(() => import('./pages/AboutUs'));
 const NotFound = React.lazy(() => import('./pages/NotFound'));
@@ -41,8 +41,12 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/register" element={<RegisterForm />} />
-          <Route path="/login" element={<LoginForm />} />
+          {/* <Route path="/register" element={<RegisterForm />} /> */}
+          <Route path="/register" element={<Register />} />
+
+          {/* <Route path="/login" element={<LoginForm />} /> */}
+          <Route path="/login" element={<Login />} />
+
           <Route path="/logout" element={<Logout />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/helpline" element={<Helpline />} />
