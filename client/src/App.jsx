@@ -17,7 +17,7 @@ const ContactUs = React.lazy(() => import('./pages/ContactUs'));
 const RegisterForm = React.lazy(() => import('./pages/Register'));
 const AdminLayout = React.lazy(() => import('./components/layouts/admin-layouts'));
 const AdminIncidents = React.lazy(() => import('./pages/AdminIncidents'));
-const AdminContact = React.lazy(() => import('./pages/AdminContact'));
+const AdminContacts = React.lazy(() => import('./pages/AdminContacts'));
 const AdminUsers = React.lazy(() => import('./pages/AdminUsers'));
 
 
@@ -55,7 +55,7 @@ function App() {
           <Route path="/admin" element={<AdminLayout />}>
             <Route path="incidents" element={<AdminIncidents />} />
             <Route path="users" element={<AdminUsers />} />
-            <Route path="contact" element={<AdminContact />} />
+            <Route path="contacts" element={<AdminContacts />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
