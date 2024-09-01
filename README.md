@@ -85,169 +85,6 @@ One of Stree's standout features is an interactive map that allows users to pinp
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
-### Built With
-
-* [![React][React.js]][React-url]
-* [![Node][Node.js]][Node-url]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- GETTING STARTED -->
-## Getting Started
-
-Follow these steps to get a local copy up and running:
-<br>
-<br>
-
-### Prerequisites
-
-These are some dependencies you will need
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
-
-### Installation
-
-
-1. Clone the repo
-   ```sh
-   git clone git@github.com/RiyaRaj28/Stree.git
-   ```
-2. Navigate to frontend directory
-    ```sh
-    cd client
-    ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- USAGE EXAMPLES -->
-<!-- ## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
-
-
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are vital to the open-source community, helping it grow, inspire, and create new possibilities. Any contributions you make are sincerely appreciated.
-
-If you have ideas on how to improve this project, feel free to fork the repository and submit a pull request. You can also open an issue and tag it as "enhancement." And if you find the project useful, don't forget to give it a star! Thank you for your support!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- LICENSE -->
-<!-- ## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
- -->
-
-
-<!-- CONTACT -->
-
-## Contact
-
-### Team Links
-<br>
-
-Riya Raj - [Riya Raj](https://linkedin.com/)
-
-Profile Link: [https://github.com/RiyaRaj28](https://github.com/RiyaRaj28)
-<br>
-
-<br>
-
-Imrana Sumbul - [Imrana Sumbul](https://linkedin.com/)
-
-Profile Link:[https://github.com/imranasumbul](https://github.com/imranasumbul)
-
-<br>
-
-Aditi Jogdand - [Aditi Jogdand](https://linkedin.com/)
-
-Profile Link: [https://github.com/ms-solly](https://github.com/ms-solly)
-
-<br>
-<br>
-
-## Project Links
-
-<br>
-<!-- Repository Link: [https://github.com/VishrutAggarwal/Stree](https://github.com/VishrutAggarwal/Stree) -->
-
-* Demo Video Link: [Google Drive Link](https://drive.google.com/)
-
-* Deployed Site: [visit](https://stree-frontend.onrender.com/)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- ACKNOWLEDGMENTS -->
- ## Acknowledgments
-
-This is list of resources we found helpful and would like to give credit to. We've included a few to kick things off!
-
-* [React Icons](https://react-icons.github.io/react-icons/search)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p> 
-
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
-[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[React-url]: https://reactjs.org/
-[Node.js]: https://img.shields.io/badge/Node-27B800?style=for-the-badge&logo=node.js&logoColor=white
-[Node-url]: https://nodejs.org
-=======
-## Stree
-
-Stree is a women-centric web application designed to provide essential resources and support for women. The platform offers access to career mentorship, educational resources, and links to helplines. Additionally, it includes a feature (under development) for reporting harassment or unwanted incidents based on location.
-
-## Features
- 
-- **Career Mentorship**: Access a curated list of resources to help women grow in their careers.
-- **Helplines**: Quick links to essential helplines for immediate assistance.
-- **Incident Reporting (In Progress)**: A feature that allows women to report harassment or unwanted incidents based on their location.
-
-
 ## Technologies Used
 
 ### Frontend
@@ -338,11 +175,116 @@ Stree is a women-centric web application designed to provide essential resources
 
 - Open your browser and go to http://localhost:your_local_port to view the application.
 
+### Built With
 
-## Contributions
+* [![React][React.js]][React-url]
+* [![Node][Node.js]][Node-url]
 
-Contributions are welcome! Please fork this repository and submit a pull request with your improvements.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Contributing
+## Ways to Contribute
+
+- As a first time contributor, navigating through the project, it can be quite daunting for you. Please make sure to go through the [repository structure](#repository-structure) to understand the project a bit better, if you want to understand the project better.
+
+- Open a issue ticket for any gap in documentation or bug or feature requests that you have, opening up issue tickets is always a good way to contribute.
+
+- You can help review open PRs for best backend and devops realted code practices and help the contributors out.
+
+- Lastly and the most obvious one feel free to pick up open issue tickets and raise a PR for it resolving the bug, feature or documentation request.
+
+
+Contributions are vital to the open-source community, helping it grow, inspire, and create new possibilities. Any contributions you make are sincerely appreciated.
+If you have ideas on how to improve this project, feel free to fork the repository and submit a pull request. You can also open an issue and tag it as "enhancement." And if you find the project useful, don't forget to give it a star! Thank you for your support!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- LICENSE -->
+<!-- ## License
+
+Distributed under the MIT License. See `LICENSE.txt` for more information.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+ -->
+
+
+<!-- CONTACT -->
+
+## Contact
+
+### Team Links
+<br>
+
+Riya Raj - [Riya Raj](https://linkedin.com/)
+
+Profile Link: [https://github.com/RiyaRaj28](https://github.com/RiyaRaj28)
+<br>
+
+<br>
+
+Imrana Sumbul - [Imrana Sumbul](https://linkedin.com/)
+
+Profile Link:[https://github.com/imranasumbul](https://github.com/imranasumbul)
+
+<br>
+
+Aditi Jogdand - [Aditi Jogdand](https://linkedin.com/)
+
+Profile Link: [https://github.com/ms-solly](https://github.com/ms-solly)
+
+<br>
+<br>
+
+## Project Links
+
+<br>
+<!-- Repository Link: [https://github.com/VishrutAggarwal/Stree](https://github.com/VishrutAggarwal/Stree) -->
+
+* Demo Video Link: [Google Drive Link](https://drive.google.com/)
+
+* Deployed Site: [visit](https://stree-frontend.onrender.com/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- ACKNOWLEDGMENTS -->
+ ## Acknowledgments
+
+This is list of resources we found helpful and would like to give credit to. We've included a few to kick things off!
+
+* [React Icons](https://react-icons.github.io/react-icons/search)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p> 
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
+[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
+[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
+[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
+[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
+[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
+[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
+[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
+[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/othneildrew
+[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[React-url]: https://reactjs.org/
+[Node.js]: https://img.shields.io/badge/Node-27B800?style=for-the-badge&logo=node.js&logoColor=white
+[Node-url]: https://nodejs.org
 
 ## Licence
 
