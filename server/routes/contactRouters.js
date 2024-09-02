@@ -4,4 +4,5 @@ const contactController = require('../controllers/contactController');
 
 contactRouter.post('/contactData', contactController.contactData);
 
+
 module.exports = contactRouter;

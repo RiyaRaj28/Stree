@@ -5,6 +5,7 @@ import axios from 'axios';
 
 import BottomWarning from './BottomWarning';
 
+
 const backendUrl = import.meta.env.VITE_BACKEND_URL
 
 function LoginForm() {
@@ -78,6 +79,7 @@ function LoginForm() {
             }
         }
     };
+
       //  const response = await axios.post(`${backendUrl}/api/auth/login`, loginData, {
       //   headers: {
       //     'Content-Type': 'application/json',
@@ -117,6 +119,7 @@ function LoginForm() {
     // }
   //};
 
+
   return (
     <div className="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md -z-0">
         <h2 className="text-4xl font-extrabold text-white mb-6 text-center">Login</h2>
@@ -152,7 +155,9 @@ function LoginForm() {
           Login
         </button>
 
+
         <BottomWarning to={"/register"} label={"New to the platform?"} ButtonText={"Register"} />
+
 
       </form>
     </div>
