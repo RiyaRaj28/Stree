@@ -9,7 +9,7 @@ const app = express();
 const port = 3000;
 
 const corsOptions = {
-    origin: process.env.FRONTEND_URL,
+    //origin: process.env.FRONTEND_URL,
     methods: "GET, POST, PUT, DELETE",
     credentials: true,
 }
