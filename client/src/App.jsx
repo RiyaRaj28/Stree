@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import React, { Suspense } from 'react';
+import Loading from './components/Loading';
 const Home = React.lazy(() => import('./pages/Home'));
 const Resources = React.lazy(() => import('./pages/Resources'));
 const Login = React.lazy(() => import('./pages/Login'));
@@ -37,7 +38,7 @@ function App() {
 
   return (
     <div className="app-container">
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Loading/>}>
         {(!shouldHideHeaderFooter) ? <Header /> : null} {/* Conditionally render Header */}
 
         <Routes>
