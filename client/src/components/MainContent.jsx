@@ -22,16 +22,16 @@ function MainContent() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-900/95 text-white flex flex-col items-center justify-center py-16 px-8">
+    <div className="min-h-screen bg-gray-900/95 text-white flex flex-col items-center justify-center py-16 px-8 lg:w-full">
       <div className="flex flex-col md:flex-row items-start justify-between max-w-7xl mx-auto">
         {/* Left Content - Text and Buttons */}
-        <div className="md:w-1/2 flex flex-col items-start">
+        <div className="md:w-1/2 flex flex-col text-left">
           <h1 className="text-7xl font-bold text-pink-500">Stree</h1>
           <p className="text-2xl mt-4">For our fierce warriors and their never diminishing light.</p>
           <p className="text-2xl text-pink-300 mt-4">{typedText}</p>
 
           {/* Buttons in descending width */}
-          <div className="mt-16 space-y-4">
+          <div className="mt-16 space-y-4 justify-start">
             <div className="group w-96 h-16 bg-pink-600 hover:bg-pink-700 text-white text-lg font-semibold flex items-center justify-between px-6 cursor-pointer rounded-lg transition-all duration-300">
               <Link to="/incident-form" className="w-full h-full flex items-center justify-between">
                 <span>Report Incident</span>
