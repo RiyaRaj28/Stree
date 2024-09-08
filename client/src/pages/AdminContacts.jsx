@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 const backendUrl = import.meta.env.VITE_BACKEND_URL;
 import { useAuth } from '../store/auth';
 import '../../src/adminUsers.css';
+import { Link } from 'react-router-dom';
 
 const AdminContacts = () => {
     const { user, token } = useAuth();
@@ -61,6 +62,8 @@ const AdminContacts = () => {
                             <th className ="contact-name-col">User Name</th>
                             <th className ="contact-email-col">Email</th>
                             <th className ="contact-msg-col=">Message</th>
+                            <th className ="contact-msg-col=">Edit</th>
+                            <th className ="contact-msg-col=">Delete</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -71,8 +74,12 @@ const AdminContacts = () => {
                                     <td>{contact.userName}</td>
                                     <td>{contact.email}</td>
                                     <td>{contact.message}</td>
-                                    <td><button className="edit-delete"> Edit</button></td>
-                                    <td><button className="edit-delete" onClick={() => deleteUser(incident._id)}>Delete</button></td>
+                                    {/* <td><button className="edit-delete"> Edit</button></td> */}
+                                    <td><Link to={`/admin/contacts/${contact._id}/edit`} className="edit-delete">
+                                            <button className="edit-delete" >Edit</button>
+                                        </Link>
+                                    </td>
+                                    <td><button className="edit-delete" onClick={() => deleteContacts(contact._id)}>Delete</button></td>
                                 </tr>
                             );
                         }

@@ -4,6 +4,8 @@ import { MapContainer, TileLayer, Marker, useMapEvents } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { useAuth } from "../store/auth";
 const backendUrl = import.meta.env.VITE_BACKEND_URL;
+import { MdMyLocation } from "react-icons/md";
+
 
 const IncidentForm = () => {
   const [description, setDescription] = useState('');
@@ -90,17 +92,18 @@ const IncidentForm = () => {
   };
 
   return (
-    <div style={containerStyles}>
-      <div style={formContainerStyles}>
-        <h2 style={{ textAlign: 'center', color: '#333' }}>Report an Incident</h2>
+    <div style={containerStyles} className=''>
+      <div style={formContainerStyles} className='bg-white shadow-lg'>
+        <h2 style={{ textAlign: 'center',}} className='text-gray-900 text-xl m-3'>Report an Incident</h2>
         <form onSubmit={onSubmit} style={formStyles}>
           <div style={fieldContainer}>
-            <label style={labelStyles}>Name</label>
+            <label style={labelStyles} >Name</label>
             <input
               type="text"
               value={name}
               readOnly 
               style={inputStyles}
+              className='bg-gray-800 focus:bg-gray-900 outline-none border border-white focus:border-pink-400'
             />
           </div>
 
@@ -111,6 +114,7 @@ const IncidentForm = () => {
               onChange={(e) => setDescription(e.target.value)}
               required
               style={textareaStyles}
+              className='bg-gray-800 focus:bg-gray-900 outline-none border border-white '
             />
           </div>
 
@@ -121,6 +125,7 @@ const IncidentForm = () => {
               onChange={(e) => setCategory(e.target.value)}
               required
               style={inputStyles}
+              className='bg-gray-800 focus:bg-gray-900'
             >
               <option value="mistreatment">Mistreatment</option>
               <option value="hooligans">Hooligans</option>
@@ -138,8 +143,9 @@ const IncidentForm = () => {
                 onChange={(e) => setDate(e.target.value)}
                 required
                 style={{ ...inputStyles, flex: '1' }}
+                className='bg-gray-800 focus:bg-gray-900'
               />
-              <button type="button" onClick={setToday} style={smallButtonStyles}>
+              <button type="button" onClick={setToday} style={smallButtonStyles} className='bg-pink-500'>
                 Today
               </button>
             </div>
@@ -154,23 +160,25 @@ const IncidentForm = () => {
                 onChange={(e) => setTime(e.target.value)}
                 required
                 style={{ ...inputStyles, flex: '1' }}
+                className='bg-gray-800 focus:bg-gray-900'
               />
-              <button type="button" onClick={setNow} style={smallButtonStyles}>
+              <button type="button" onClick={setNow} style={smallButtonStyles} className='bg-pink-500'>
                 Now
               </button>
             </div>
           </div>
 
           <div style={fieldContainer}>
-            <label style={labelStyles}>Location</label>
+            <label style={labelStyles} className=''>Location</label>
             <button
               type="button"
               onClick={detectLocation}
               style={buttonStyles}
+              className='bg-pink-500'
             >
-              Detect My Location
+              Detect My Location<MdMyLocation className='inline-block mx-1 text-xl hover:bg-pink-600'/>
             </button>
-            <p style={locationTextStyles}>
+            <p style={locationTextStyles} className=' text-xs m-0 mt-1'>
               {latitude && longitude
                 ? `Latitude: ${latitude}, Longitude: ${longitude}`
                 : 'Click on the map to set a location'}
@@ -181,6 +189,7 @@ const IncidentForm = () => {
             type="submit"
             disabled={!latitude || !longitude}
             style={submitButtonStyles}
+            className='bg-pink-600'
           >
             Submit
           </button>
@@ -210,7 +219,7 @@ const IncidentForm = () => {
 const containerStyles = {
   display: 'flex',
   flexDirection: 'row',
-  paddingTop: '60px',
+  paddingTop: '40px',
   height: '100vh', 
   width: '100vw',
   position: 'relative',
@@ -220,9 +229,10 @@ const containerStyles = {
 const formContainerStyles = {
   flex: 2, 
   padding: '20px',
-  backgroundColor: '#1E1E1E',
+  // backgroundColor: '#1E1E1E',
   color: '#fff',
-  borderRadius: '8px',
+  // borderRadius: '8px',
+  
 };
 
 const mapContainerStyles = {
@@ -242,7 +252,7 @@ const fieldContainer = {
 };
 
 const labelStyles = {
-  fontSize: '16px',
+  fontSize: '10px',
   marginBottom: '5px',
   color: '#555',
 };
@@ -251,7 +261,7 @@ const textareaStyles = {
   padding: '10px',
   fontSize: '14px',
   borderRadius: '4px',
-  border: '1px solid #ccc',
+  // border: '1px solid #ccc',
   height: '100px',
 };
 
@@ -259,7 +269,7 @@ const smallButtonStyles = {
   padding: '5px 10px',
   fontSize: '14px',
   borderRadius: '4px',
-  backgroundColor: '#007BFF',
+  // backgroundColor: '#007BFF',
   color: 'white',
   border: 'none',
   cursor: 'pointer',
@@ -268,17 +278,17 @@ const smallButtonStyles = {
 
 const inputStyles = {
   padding: '10px',
-  fontSize: '14px',
+  fontSize: '10px',
   borderRadius: '4px',
   border: '1px solid #ccc',
   flex: '1', 
 };
 
 const buttonStyles = {
-  padding: '10px',
-  fontSize: '14px',
+  padding: '8px',
+  fontSize: '9px',
   borderRadius: '4px',
-  backgroundColor: '#007BFF',
+  // backgroundColor: '#007BFF',
   color: 'white',
   border: 'none',
   cursor: 'pointer',
@@ -288,15 +298,15 @@ const submitButtonStyles = {
   padding: '10px 20px',
   fontSize: '16px',
   borderRadius: '4px',
-  backgroundColor: '#28a745',
+  // backgroundColor: '#28a745',
   color: 'white',
   border: 'none',
   cursor: 'pointer',
-  marginTop: '20px',
+  marginTop: '10px',
 };
 
 const locationTextStyles = {
-  marginTop: '10px',
+  // marginTop: '10px',
   color: '#777',
 };
 
