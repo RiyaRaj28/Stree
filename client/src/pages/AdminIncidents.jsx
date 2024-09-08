@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 const backendUrl = import.meta.env.VITE_BACKEND_URL;
 import { useAuth } from '../store/auth';
 import '../../src/adminUsers.css';
@@ -21,7 +22,8 @@ const AdminIncidents = () => {
             console.log("Token from admin", mytoken)
             const data = await response.json();
             console.log("Data from admin", data)
-            console.log(data[22].user.userName);
+            // for(let i=0; i<31; i++)
+            //     console.log(data[22].user.userName);
             setIncidents(data);
         } catch (error) {
             console.error('Error fetching incidents: ', error);
@@ -47,8 +49,10 @@ const AdminIncidents = () => {
     };
 
     useEffect(() => {
-        getAllUsersIncidents();
-    }, []);
+        if (token) {
+            getAllUsersIncidents();
+        }
+    }, [token]);
 
     return (
         <section className="admin-users-section">
@@ -73,14 +77,17 @@ const AdminIncidents = () => {
                         {incidents.map((incident, index) => {
                             return (
                                 <tr key={index}>
-                                    <td> User Name</td>
-                                    {/* <td>{incident.user.userName}</td> */}
+                                    <td>{incident.user.userName}</td>
                                     <td>{incident.category}</td>
                                     <td>{incident.description}</td>
                                     <td>{incident.date.split('T')[0]}</td>
                                     <td>{incident.time}</td>
                                     <td>{incident.location.coordinates[0]}, {incident.location.coordinates[1]}</td>
-                                    <td><button className="edit-delete"> Edit</button></td>
+                                    <td>
+                                        <Link to={`/admin/incidents/${incident._id}/edit`} className="edit-delete">
+                                            <button className="edit-delete" >Edit</button>
+                                        </Link>
+                                    </td>
                                     <td><button className="edit-delete" onClick={() => deleteUser(incident._id)}>Delete</button></td>
                                 </tr>
                             );

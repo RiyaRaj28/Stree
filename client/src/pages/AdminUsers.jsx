@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-const backendUrl = import.meta.env.VITE_BACKEND_URL;
 import { useAuth } from '../store/auth';
-import '../../src/adminUsers.css'
-import { Link} from "react-router-dom";
+import { Link } from 'react-router-dom';
+import '../../src/adminUsers.css';
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 const AdminUsers = () => {
     const { user, token } = useAuth();
@@ -12,55 +12,48 @@ const AdminUsers = () => {
     const getAllUsersData = async () => {
         try {
             const config = {
-                "method": "GET",
-                "headers": {
+                method: "GET",
+                headers: {
                     Authorization: `Bearer ${mytoken}`,
                     "Content-Type": "application/json",
                 }
             };
-            const response = await fetch(`${backendUrl}/api/admin/getAllUsers`, config)
-            console.log("Token from admin", mytoken)
+            const response = await fetch(`${backendUrl}/api/admin/getAllUsers`, config);
             const data = await response.json();
-            console.log("Data from admin", data)
             setUsers(data);
-
-
-
         } catch (error) {
-            console.error("error from getAllUsersData : ", error);
+            console.error("Error fetching users data: ", error);
         }
-    }
+    };
 
     const deleteUser = async (id) => {
         try {
             const config = {
-                "method": "DELETE",
-                "headers": {
+                method: "DELETE",
+                headers: {
                     Authorization: `Bearer ${mytoken}`,
                     "Content-Type": "application/json",
                 }
             };
-            const response = await fetch(`${backendUrl}/api/admin/deleteUser/${id}`, config)
-            const data = await response.json();
-            console.log("Data from admin after deletion", data)
-
-            if(response.ok){
+            const response = await fetch(`${backendUrl}/api/admin/deleteUser/${id}`, config);
+            if (response.ok) {
                 getAllUsersData();
             }
-
         } catch (error) {
-            console.error("error from getAllUsersData : ", error);
+            console.error("Error deleting user: ", error);
         }
-    }
+    };
 
     useEffect(() => {
-        getAllUsersData()
+        getAllUsersData();
     }, []);
 
     return (
         <>
             <section className="admin-users-section">
-                <div className="container"> <h2>Users Data</h2></div>
+                <div className="container">
+                    <h2>Users Data</h2>
+                </div>
                 <div className="container admin-users">
                     <table>
                         <thead>
@@ -71,24 +64,25 @@ const AdminUsers = () => {
                                 <th>Delete</th>
                             </tr>
                         </thead>
-
                         <tbody>
-                            {users.map((user, index) => {
-                                return (
-                                    <tr key={index} >
-
-                                        <td>{user.userName}</td>
-                                        <td >{user.email} </td>
-                                        <td><button className="edit-delete" ><Link to = {`admin/users/${user._id}/edit`}> </Link> Edit </button></td>
-                                        <td><button className="edit-delete" onClick={()=> deleteUser(user._id)}>Delete</button></td>
-
-                                    </tr>
-                                );
-                            })}
-
+                            {users.map((user, index) => (
+                                <tr key={index}>
+                                    <td>{user.userName}</td>
+                                    <td>{user.email}</td>
+                                    <td>
+                                        <Link to={`/admin/users/${user._id}/edit`} className="edit-delete">
+                                            <button className="edit-delete" >Edit</button>
+                                        </Link>
+                                    </td>
+                                    <td>
+                                        <button className="edit-delete" onClick={() => deleteUser(user._id)}>
+                                            Delete
+                                        </button>
+                                    </td>
+                                </tr>
+                            ))}
                         </tbody>
                     </table>
-
                 </div>
             </section>
         </>

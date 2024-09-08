@@ -191,4 +191,4 @@ function Resources() {
   );
 }
 
-export default ResourcesPage;
+export default Resources;
