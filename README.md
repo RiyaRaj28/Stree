@@ -7,7 +7,7 @@
 <!--     <img src="https://media.discordapp.net/attachments/794519160746541108/1061560277168029756/valky.png" alt="Logo" width="80" height="80"> -->
   </a>
 
-  <h3 align="center" >Stree</h3>
+  <h3 align="center" >Stree - Empowering Women's Safety and Growth</h3>
 <hr/>
 <hr/>
 
