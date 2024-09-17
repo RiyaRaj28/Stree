@@ -242,18 +242,6 @@ Profile Link: [https://github.com/ms-solly](https://github.com/ms-solly)
 <br>
 <br>
 
-## Project Links
-
-<br>
-<!-- Repository Link: [https://github.com/VishrutAggarwal/Stree](https://github.com/VishrutAggarwal/Stree) -->
-
-* Demo Video Link: [Google Drive Link](https://drive.google.com/)
-
-* Deployed Site: [visit](https://stree-frontend.onrender.com/)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- ACKNOWLEDGMENTS -->
  ## Acknowledgments
