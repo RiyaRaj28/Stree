@@ -45,7 +45,7 @@ function LoginForm() {
                     password: '',
                   });
           
-                  navigate("/");
+                  navigate("/home");
                 
         } catch (error) {
             if (error.response) {

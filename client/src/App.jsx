@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useLocation, Navigate } from 'react-router-dom';
 import React, { Suspense } from 'react';
 import Loading from './components/Loading';
 const Home = React.lazy(() => import('./pages/Home'));
@@ -42,7 +42,8 @@ function App() {
         {(!shouldHideHeaderFooter) ? <Header /> : null} {/* Conditionally render Header */}
 
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Navigate to="/Login" replace />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/logout" element={<Logout />} />
