@@ -23,7 +23,7 @@ function Header() {
           </div>
           <div className="flex items-center">
             <div className="hidden md:flex space-x-4">
-              <Link to="/" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link to="/home" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                 Home
               </Link>
               <Link to="/resources" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">

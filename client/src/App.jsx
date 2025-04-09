@@ -42,7 +42,7 @@ function App() {
         {(!shouldHideHeaderFooter) ? <Header /> : null} {/* Conditionally render Header */}
 
         <Routes>
-          <Route path="/" element={<Navigate to="/Login" replace />} />
+          <Route path="/" element={<Navigate to="/login" replace />} />
           <Route path="/home" element={<Home />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
