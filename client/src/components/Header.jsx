@@ -86,7 +86,7 @@ function Header() {
       {isOpen && (
         <div className="md:hidden bg-gray-800 max-h-64 overflow-y-auto ">
           <div className="px-2 pt-2 pb-3 sm:pb-20 space-y-1 sm:px-3">
-            <Link to="/" className="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium">
+            <Link to="/home" className="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium">
               Home
             </Link>
             <Link to="/register" className="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium">
