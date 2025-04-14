@@ -19,9 +19,6 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json());
 
-// Serve static files from the React app
-app.use(express.static(path.join(__dirname, '../client/dist')));
-
 // Import routers
 const incidentRouter = require('./routes/incidentRouters');
 const userRouter = require('./routes/userRouters');
@@ -36,12 +33,6 @@ app.use('/api/users', userRouter);
 app.use('/api/auth', authRouter);
 app.use('/api/contact', contactRouters);
 app.use('/api/admin', adminRouter);
-
-// The "catchall" handler: for any request that doesn't
-// match one above, send back React's index.html file.
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/dist', 'index.html'));
-});
 
 app.use(errorMiddleware);
 
