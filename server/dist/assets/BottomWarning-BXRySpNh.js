@@ -1,0 +1,1 @@
+import{R as r,j as e,L as a}from"./index-DHdrx00N.js";function i({label:t,ButtonText:s,to:n}){return e.jsx(e.Fragment,{children:e.jsxs("div",{className:"w-full py-3 flex justify-center",children:[e.jsx("span",{className:"text-sm  text-purple-300",children:t}),e.jsx(a,{to:n,className:"text-sm mx-2 underline text-white ",children:s})]})})}const x=r.memo(i);export{x as B};

@@ -1,0 +1,1 @@
+import{j as e}from"./index-DHdrx00N.js";function r(){return e.jsx("div",{className:"flex items-center justify-center h-screen bg-pink-500",children:e.jsx("h1",{className:"text-3xl font-bold text-white",children:"Forum Page"})})}export{r as default};

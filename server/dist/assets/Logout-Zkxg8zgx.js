@@ -1,0 +1,1 @@
+import{j as e}from"./index-DHdrx00N.js";import{L as r}from"./LoginForm-CE6NsV3M.js";import"./axios-C8DqakIB.js";import"./BottomWarning-BXRySpNh.js";function m(){return e.jsx("div",{className:"flex flex-col items-center justify-center h-screen bg-pink-500 ",children:e.jsx(r,{className:"w-full"})})}export{m as default};
