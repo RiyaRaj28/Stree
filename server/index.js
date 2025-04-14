@@ -10,7 +10,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 const corsOptions = {
-    origin: process.env.FRONTEND_URL || '*',
+    origin: process.env.FRONTEND_URL || 'https://stree-frontend.onrender.com',
     methods: "GET, POST, PUT, DELETE, PATCH",
     credentials: true,
 }

@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "start:dev": "nodemon index.js",
-    "build": "cd client && npm install && npm run build"
+    "dev": "nodemon index.js",
+    "build": "npm install && npm run build"
   },
   "keywords": [],
   "author": "",
