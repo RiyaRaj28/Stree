@@ -16,6 +16,7 @@ export default defineConfig({
     outDir: 'dist',
     emptyOutDir: true,
   },
+  base: '/',
   define: {
     'process.env.VITE_BACKEND_URL': JSON.stringify(process.env.VITE_BACKEND_URL || 'https://stree-backend.onrender.com'),
   }
